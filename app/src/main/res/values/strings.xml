@@ -1,0 +1,134 @@
+<resources>
+    <string name="logo">AIS system</string>
+    <string name="app_name">AIS</string>
+    <string name="banner">banner</string>
+    <string name="user_name">UserName</string>
+    <string name="password">Password</string>
+    <string name="cpassword">Confirm password</string>
+    <string name="login">Login</string>
+    <string name="f_pass">Forgot password?</string>
+    <string name="Sing_upD">Sign up as a doctor</string>
+    <string name="Sing_upP">Sign up as a patient</string>
+    <string name="star">*</string>
+    <string name="signup"> Sign up</string>
+    <string name="FNAME">First Name</string>
+    <string name="lNAME">Last Name</string>
+    <string name="email">Email</string>
+    <string name="Gender">Gender: </string>
+    <string name="hospital">Hospital: </string>
+    <string name="medical_id"> Medical ID </string>
+    <string name="bdate"> Birthdate: </string>
+    <string name="phone"> Mobile number </string>
+    <string name="Major"> Major </string>
+    <string name="aboutme"> About me </string>
+    <string name="ExistD"> Exist Diseases: </string>
+    <string name="diabetes">Diabetes</string>
+    <string name="Asthma">Asthma</string>
+    <string name="bPressure">Blood pressure</string>
+    <string name="vivoSmart">Do you have Garmin Vivo Smart HD watch?</string>
+    <string name="yes">Yes</string>
+    <string name="No">No</string>
+    <string name="none">None</string>
+
+
+
+
+
+
+
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="hospital">
+        <item>Al Mana General Hospital- Dammam</item>
+        <item>Al Mana General Hospital- Khoubar</item>
+        <item>Mouwasat Hospital- Dammam</item>
+        <item>Mouwasat Hospital- Riyadh</item>
+        <item>Al Hammadi Hospital- Riyadh</item>
+        <item>Dallah Hospital- Riyadh</item>
+        <item>King Faisal Hospital- Makkah</item>
+        <item>Heraa General Hospital- Makkah</item>
+    </string-array>
+
+    <string-array name="year">
+        <item>1960</item>
+        <item>1961</item>
+        <item>1962</item>
+        <item>1963</item>
+        <item>1964</item>
+        <item>1965</item>
+        <item>1966</item>
+        <item>1967</item>
+        <item>1968</item>
+        <item>1969</item>
+        <item>1970</item>
+        <item>1971</item>
+        <item>1972</item>
+        <item>1973</item>
+        <item>1974</item>
+        <item>1975</item>
+        <item>1976</item>
+        <item>1978</item>
+        <item>1979</item>
+        <item>1980</item>
+        <item>1981</item>
+        <item>1982</item>
+        <item>1983</item>
+        <item>1984</item>
+        <item>1985</item>
+    </string-array>
+
+    <string-array name="month">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="day">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+
+
+
+</resources>
