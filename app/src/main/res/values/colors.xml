@@ -7,6 +7,11 @@
     <color name="colorblack">#000000</color>
     <color name="colorgray">#9d9d9d</color>
     <color name="colorWhite">#ffffff</color>
+    <color name="colorPrimary1">#278be3</color>
+    <color name="colorPrimaryDark1">#0f5998</color>
+    <color name="colorAccent1">#4075a2</color>
+    <color name="colorNavIcon">#dae9f6</color>
+    <color name="colorNavText">#01294b</color>
 
 
 

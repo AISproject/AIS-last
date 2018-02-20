@@ -29,11 +29,11 @@
     <string name="yes">Yes</string>
     <string name="No">No</string>
     <string name="none">None</string>
-
-
-
-
-
+    <string name="MyProfile">My Profile</string>
+    <string name="Outbreaks">Outbreaks</string>
+    <string name="Reportflu">Report Flu</string>
+    <string name="MyDoctor">My Doctor</string>
+    <string name="title_activity_fragment_report_flu">FragmentReportFlu</string>
 
 
     <string-array name="gender">
@@ -128,7 +128,6 @@
         <item>30</item>
         <item>31</item>
     </string-array>
-
 
 
 </resources>
