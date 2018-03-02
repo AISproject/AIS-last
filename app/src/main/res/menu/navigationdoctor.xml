@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/MyProfile1"
+        android:icon="@drawable/ic_myprofile"
+        android:title="@string/MyProfile" />
+
+    <item
+        android:id="@+id/outbreak"
+        android:icon="@drawable/ic_loc"
+        android:title="@string/Outbreaks" />
+
+    <item
+        android:id="@+id/report"
+        android:icon="@drawable/ic_report"
+        android:title="@string/Report" />
+
+    <item
+        android:id="@+id/mypatient"
+        android:icon="@drawable/ic_mypatient"
+        android:title="@string/MyPatient" />
+
+</menu>

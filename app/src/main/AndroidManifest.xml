@@ -18,7 +18,9 @@
         </activity>
         <activity android:name=".SignupDoctor" />
         <activity android:name=".signUpPatient" />
-        <activity android:name=".MainActivityPatient"></activity>
+        <activity android:name=".MainActivityPatient" />
+        <activity android:name=".MainDoctorActivity" />
+
     </application>
 
 </manifest>

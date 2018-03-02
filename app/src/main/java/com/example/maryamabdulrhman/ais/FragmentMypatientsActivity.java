@@ -7,12 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+public class FragmentMypatientsActivity extends Fragment {
 
-public class PatientProfile extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragmentpatient, null);
+        return inflater.inflate(R.layout.activity_fragment_mypatients, null);
     }
 }

@@ -32,7 +32,10 @@
     <string name="MyProfile">My Profile</string>
     <string name="Outbreaks">Outbreaks</string>
     <string name="Reportflu">Report Flu</string>
+    <string name="Report">Report</string>
     <string name="MyDoctor">My Doctor</string>
+    <string name="MyPatient">My Patients</string>
+
     <string name="title_activity_fragment_report_flu">FragmentReportFlu</string>
 
 
