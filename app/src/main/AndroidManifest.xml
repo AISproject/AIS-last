@@ -20,7 +20,7 @@
         <activity android:name=".signUpPatient" />
         <activity android:name=".MainActivityPatient" />
         <activity android:name=".MainDoctorActivity" />
-
+        <activity android:name=".ForgetpassworedActivity"></activity>
     </application>
 
 </manifest>
