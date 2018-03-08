@@ -11,13 +11,13 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="60dp"
-        android:layout_height="80dp"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
         android:layout_above="@+id/email"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="42dp"
+        android:layout_marginBottom="22dp"
         android:contentDescription="@string/logo"
-        app:srcCompat="@drawable/logo3" />
+        app:srcCompat="@drawable/logo2" />
 
     <EditText
         android:id="@+id/email"
@@ -48,13 +48,10 @@
     <Button
         android:id="@+id/loginBtn"
         android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_alignEnd="@+id/password"
-        android:layout_alignLeft="@+id/password"
-        android:layout_alignRight="@+id/password"
-        android:layout_alignStart="@+id/password"
+        android:layout_height="45dp"
+        android:layout_alignEnd="@+id/Fpassword"
+        android:layout_alignRight="@+id/Fpassword"
         android:layout_below="@+id/password"
-        android:layout_marginTop="22dp"
         android:background="@color/colorPrimary"
         android:text="@string/login" />
 
@@ -63,30 +60,13 @@
         android:id="@+id/Fpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/password"
-        android:layout_alignRight="@+id/password"
-        android:layout_below="@+id/password"
+        android:layout_below="@+id/loginBtn"
+        android:layout_centerHorizontal="true"
         android:text="@string/f_pass"
         android:textColor="@color/colorPrimaryDark" />
 
-    <TextView
-        android:id="@+id/SignUpD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/SignUpP"
-        android:layout_alignStart="@+id/SignUpP"
-        android:layout_below="@+id/loginBtn"
-        android:text="@string/Sing_upD"
-        android:textColor="@color/colorPrimaryDark" />
 
-    <TextView
-        android:id="@+id/SignUpP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/SignUpD"
-        android:layout_centerHorizontal="true"
-        android:text="@string/Sing_upP"
-        android:textColor="@color/colorPrimaryDark" />
+
 
     <ImageView
         android:id="@+id/banner"
@@ -97,5 +77,44 @@
         android:layout_alignParentStart="true"
         android:contentDescription="@string/banner"
         app:srcCompat="@drawable/baner2" />
+
+    <Button
+        android:id="@+id/SignupD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/password"
+        android:layout_alignStart="@+id/password"
+        android:layout_below="@+id/Signupas"
+        android:text="@string/Sing_upD" />
+
+    <Button
+        android:id="@+id/Signupp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/SignupD"
+        android:layout_alignBottom="@+id/SignupD"
+        android:layout_alignEnd="@+id/password"
+        android:layout_alignRight="@+id/password"
+        android:text="@string/Sing_upP" />
+
+    <TextView
+        android:id="@+id/Signupas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/logo"
+        android:layout_alignStart="@+id/logo"
+        android:layout_below="@+id/Fpassword"
+        android:text="@string/Sing_upas"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/SignupD"
+        android:layout_alignBottom="@+id/SignupD"
+        android:layout_toEndOf="@+id/SignupD"
+        android:layout_toRightOf="@+id/SignupD"
+        android:text="@string/or" />
 
 </RelativeLayout>

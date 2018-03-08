@@ -5,13 +5,15 @@
     <string name="user_name">UserName</string>
     <string name="password">Password</string>
     <string name="cpassword">Confirm password</string>
-    <string name="login">Login</string>
+    <string name="login">Sign in</string>
     <string name="f_pass">Forgot password?</string>
     <string name="fpasswored">Forgot password</string>
     <string name="submit">Submit</string>
+    <string name="Sing_upas">Sign up As:</string>
+    <string name="or">OR</string>
 
-    <string name="Sing_upD">Sign up as a doctor</string>
-    <string name="Sing_upP">Sign up as a patient</string>
+    <string name="Sing_upD">Doctor</string>
+    <string name="Sing_upP">Patient</string>
     <string name="star">*</string>
     <string name="signup"> Sign up</string>
     <string name="FNAME">First Name</string>

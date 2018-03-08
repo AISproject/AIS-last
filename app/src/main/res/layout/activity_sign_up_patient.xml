@@ -24,7 +24,7 @@
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
             android:textStyle="bold"
-            tools:background="@color/colorPrimary" />
+            android:background="@color/colorPrimary" />
 
 
         <EditText
@@ -114,53 +114,27 @@
             android:id="@+id/sgender"
             android:layout_width="230dp"
             android:layout_height="35dp"
+            android:layout_alignLeft="@+id/phone"
+            android:layout_alignStart="@+id/phone"
             android:layout_alignTop="@+id/star8"
-            android:layout_toEndOf="@+id/birthdate"
             android:layout_toLeftOf="@+id/star8"
-            android:layout_toRightOf="@+id/birthdate"
             android:layout_toStartOf="@+id/star8"
             android:entries="@array/gender"
             android:spinnerMode="dropdown" />
 
-        <TextView
-            android:id="@+id/gender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/sgender"
-            android:layout_alignBottom="@+id/sgender"
-            android:layout_alignLeft="@+id/phone"
-            android:layout_alignStart="@+id/phone"
-            android:text="@string/Gender"
-            android:textColor="@color/colorblack"
-            android:textSize="12sp" />
-
-
-
-
-        <TextView
-            android:id="@+id/birthdate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/byear"
-            android:layout_alignBottom="@+id/byear"
-            android:layout_alignLeft="@+id/gender"
-            android:layout_alignStart="@+id/gender"
-            android:text="@string/bdate"
-            android:textColor="@color/colorblack"
-            android:textSize="12sp" />
 
         <Spinner
             android:id="@+id/byear"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="35dp"
+            android:layout_alignLeft="@+id/sgender"
+            android:layout_alignStart="@+id/sgender"
             android:layout_below="@+id/sgender"
-            android:layout_toEndOf="@+id/birthdate"
-            android:layout_toRightOf="@+id/birthdate"
             android:entries="@array/year" />
 
         <Spinner
             android:id="@+id/sday"
-            android:layout_width="80dp"
+            android:layout_width="90dp"
             android:layout_height="35dp"
             android:layout_alignBaseline="@+id/smonth"
             android:layout_alignBottom="@+id/smonth"
@@ -170,24 +144,25 @@
 
         <Spinner
             android:id="@+id/smonth"
-            android:layout_width="80dp"
+            android:layout_width="90dp"
             android:layout_height="35dp"
-            android:layout_below="@+id/sgender"
-            android:layout_toEndOf="@+id/byear"
-            android:layout_toRightOf="@+id/byear"
-            android:entries="@array/month"/>
+            android:layout_above="@+id/ExisteD"
+            android:layout_centerHorizontal="true"
+            android:entries="@array/month" />
 
         <TextView
             android:id="@+id/ExisteD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/birthdate"
-            android:layout_alignStart="@+id/birthdate"
+            android:layout_alignLeft="@+id/diabetes"
+            android:layout_alignStart="@+id/diabetes"
             android:layout_below="@+id/byear"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="16dp"
+            android:layout_toLeftOf="@+id/smonth"
+            android:layout_toStartOf="@+id/smonth"
             android:text="@string/ExistD"
             android:textColor="@color/colorblack"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
 
         <CheckBox
             android:id="@+id/diabetes"
@@ -236,29 +211,27 @@
             android:id="@+id/vivoSmart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/ExisteD"
-            android:layout_alignStart="@+id/ExisteD"
+            android:layout_alignLeft="@+id/None"
+            android:layout_alignStart="@+id/None"
             android:layout_below="@+id/None"
             android:text="@string/vivoSmart"
             android:textColor="@color/colorblack"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
 
         <RadioButton
             android:id="@+id/yes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/b_pressure"
-            android:layout_alignStart="@+id/b_pressure"
+            android:layout_alignLeft="@+id/vivoSmart"
+            android:layout_alignStart="@+id/vivoSmart"
             android:layout_below="@+id/vivoSmart"
-            android:layout_marginTop="20dp"
             android:text="@string/yes" />
 
         <RadioButton
             android:id="@+id/No"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/yes"
-            android:layout_alignBottom="@+id/yes"
+            android:layout_above="@+id/SignupBtn"
             android:layout_toEndOf="@+id/diabetes"
             android:layout_toRightOf="@+id/diabetes"
             android:text="@string/No" />
