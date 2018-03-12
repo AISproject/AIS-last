@@ -9,19 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">  <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".SignupDoctor" >  </activity>
-
-        <activity android:name=".signUpPatient" > </activity>
+        <activity android:name=".SignupDoctor"></activity>
+        <activity android:name=".signUpPatient"></activity>
         <activity android:name=".MainActivityPatient" />
         <activity android:name=".MainDoctorActivity" />
-        <activity android:name=".ForgetpassworedActivity"></activity>
+        <activity android:name=".ForgetpassworedActivity" />
+        <activity android:name=".ReportCoronaActivity"></activity>
     </application>
 
 </manifest>
