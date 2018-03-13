@@ -22,7 +22,7 @@
     <string name="Gender">Gender: </string>
     <string name="hospital">Hospital: </string>
     <string name="medical_id"> Medical ID </string>
-    <string name="bdate"> Birthdate: </string>
+    <string name="bdate"> Birthdate</string>
     <string name="phone"> Mobile number </string>
     <string name="Major"> Major </string>
     <string name="aboutme"> About me </string>
