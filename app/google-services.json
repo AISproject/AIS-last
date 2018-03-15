@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1042714089236",
+    "firebase_url": "https://ais-databas.firebaseio.com",
+    "project_id": "ais-databas",
+    "storage_bucket": "ais-databas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042714089236:android:d0cddf3a9ea0479e",
+        "android_client_info": {
+          "package_name": "com.example.maryamabdulrhman.ais"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042714089236-ef0ubvpo7adn6sif41e49jugvt2mrc5s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.maryamabdulrhman.ais",
+            "certificate_hash": "f512127c05e800262ee996f8ee4e4e43c6a9f55c"
+          }
+        },
+        {
+          "client_id": "1042714089236-7ee2rvq0ru53effsgtlesl2ss7vtp7jo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQpFpjD4xpIeVwFhZ1fTsFRtKw82pnwR4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042714089236-7ee2rvq0ru53effsgtlesl2ss7vtp7jo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

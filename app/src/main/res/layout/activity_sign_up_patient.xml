@@ -123,32 +123,16 @@
             android:spinnerMode="dropdown" />
 
 
-        <Spinner
-            android:id="@+id/byear"
-            android:layout_width="100dp"
+        <TextView
+            android:id="@+id/bdate"
+            android:layout_width="230dp"
             android:layout_height="35dp"
+            android:layout_alignEnd="@+id/sgender"
             android:layout_alignLeft="@+id/sgender"
+            android:layout_alignRight="@+id/sgender"
             android:layout_alignStart="@+id/sgender"
             android:layout_below="@+id/sgender"
-            android:entries="@array/year" />
-
-        <Spinner
-            android:id="@+id/sday"
-            android:layout_width="90dp"
-            android:layout_height="35dp"
-            android:layout_alignBaseline="@+id/smonth"
-            android:layout_alignBottom="@+id/smonth"
-            android:layout_alignEnd="@+id/sgender"
-            android:layout_alignRight="@+id/sgender"
-            android:entries="@array/day" />
-
-        <Spinner
-            android:id="@+id/smonth"
-            android:layout_width="90dp"
-            android:layout_height="35dp"
-            android:layout_above="@+id/ExisteD"
-            android:layout_centerHorizontal="true"
-            android:entries="@array/month" />
+            android:hint="@string/bdate" />
 
         <TextView
             android:id="@+id/ExisteD"
@@ -156,10 +140,8 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/diabetes"
             android:layout_alignStart="@+id/diabetes"
-            android:layout_below="@+id/byear"
+            android:layout_below="@+id/bdate"
             android:layout_marginTop="16dp"
-            android:layout_toLeftOf="@+id/smonth"
-            android:layout_toStartOf="@+id/smonth"
             android:text="@string/ExistD"
             android:textColor="@color/colorblack"
             android:textSize="14sp" />
@@ -168,8 +150,8 @@
             android:id="@+id/diabetes"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_alignLeft="@+id/byear"
-            android:layout_alignStart="@+id/byear"
+            android:layout_alignLeft="@+id/bdate"
+            android:layout_alignStart="@+id/bdate"
             android:layout_below="@+id/ExisteD"
             android:text="@string/diabetes"
             android:textColor="@color/colorgray"
@@ -179,8 +161,8 @@
             android:id="@+id/Asthma"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_alignLeft="@+id/byear"
-            android:layout_alignStart="@+id/byear"
+            android:layout_alignLeft="@+id/bdate"
+            android:layout_alignStart="@+id/bdate"
             android:layout_below="@+id/diabetes"
             android:text="@string/Asthma"
             android:textColor="@color/colorgray"
@@ -189,8 +171,8 @@
             android:id="@+id/b_pressure"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_alignLeft="@+id/byear"
-            android:layout_alignStart="@+id/byear"
+            android:layout_alignLeft="@+id/bdate"
+            android:layout_alignStart="@+id/bdate"
             android:layout_below="@+id/Asthma"
             android:text="@string/bPressure"
             android:textColor="@color/colorgray"
@@ -200,8 +182,8 @@
         android:id="@+id/None"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_alignLeft="@+id/byear"
-        android:layout_alignStart="@+id/byear"
+        android:layout_alignLeft="@+id/bdate"
+        android:layout_alignStart="@+id/bdate"
         android:layout_below="@+id/b_pressure"
         android:text="@string/none"
         android:textColor="@color/colorgray"
@@ -322,11 +304,12 @@
             android:id="@+id/star9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sgender"
-            android:layout_toEndOf="@+id/sday"
-            android:layout_toRightOf="@+id/sday"
+            android:layout_alignBaseline="@+id/bdate"
+            android:layout_alignBottom="@+id/bdate"
+            android:layout_toEndOf="@+id/sgender"
+            android:layout_toRightOf="@+id/sgender"
             android:text="@string/star"
-            android:textColor="@color/colorRed"/>
+            android:textColor="@color/colorRed" />
 
 
     </RelativeLayout>
