@@ -135,9 +135,9 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/locationTextCorona"
+        android:layout_alignEnd="@+id/AgeyearCorona"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/locationTextCorona"
+        android:layout_alignRight="@+id/AgeyearCorona"
         android:layout_marginBottom="14dp"
         android:background="@android:color/holo_red_light"
         android:text="@string/report" />
