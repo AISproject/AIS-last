@@ -4,11 +4,44 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/Report"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:drawableLeft="@drawable/ic_action_back"
+        android:drawableStart="@drawable/ic_action_back"
+        android:text="@string/Report"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/reportFlu"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/Reportflu"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+        android:layout_alignEnd="@+id/reportCorona"
+        android:layout_alignLeft="@+id/reportCorona"
+        android:layout_alignRight="@+id/reportCorona"
+        android:layout_alignStart="@+id/reportCorona"
+        android:layout_below="@+id/Report"
+        android:layout_marginTop="138dp"
+        android:background="@android:color/holo_red_light"
+        android:text="@string/report_flu" />
 
+    <Button
+        android:id="@+id/reportCorona"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reportFlu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:background="@android:color/holo_red_light"
+        android:text="@string/report_corona" />
 </RelativeLayout>
