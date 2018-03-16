@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 public class MainActivityPatient extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

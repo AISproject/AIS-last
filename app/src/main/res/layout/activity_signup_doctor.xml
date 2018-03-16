@@ -133,15 +133,17 @@
             android:inputType="number"
             android:textSize="12sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/bdate"
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_alignLeft="@+id/shospital"
             android:layout_alignStart="@+id/shospital"
             android:layout_below="@+id/shospital"
             android:layout_toLeftOf="@+id/star3"
             android:layout_toStartOf="@+id/star3"
+            android:focusable="false"
+            android:textSize="12sp"
             android:hint="@string/bdate" />
 
         <EditText

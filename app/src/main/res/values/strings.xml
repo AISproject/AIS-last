@@ -12,6 +12,7 @@
     <string name="Sing_upas">Sign up As:</string>
     <string name="or">OR</string>
     <string name="cancel">cancel</string>
+    <string name="date1">Date:</string>
 
 
     <string name="Sing_upD">Doctor</string>
@@ -46,7 +47,7 @@
     <string name="title_activity_fragment_report_flu">FragmentReportFlu</string>
     <string name="report_flu">report flu</string>
     <string name="report_corona">report corona</string>
-    <string name="date">Date:</string>
+    <string name="date">Date</string>
     <string name="age2">Age:</string>
     <string name="gender">Gender</string>
     <string name="Gender">Gender:</string>
@@ -58,11 +59,25 @@
     <string name="reportcorona1">Report Corona</string>
     <string name="type_of_contact">Type of contact:</string>
     <string name="get_place">get place</string>
-
+    <string name="contacttype">Type of Contact:</string>
 
     <string-array name="gender">
         <item>Male</item>
         <item>Female</item>
+    </string-array>
+
+    <string-array name="TypeOfContact">
+        <item>Camel contact</item>
+        <item>Human contact</item>
+        <item>Unknown contact</item>
+    </string-array>
+
+    <string-array name="ageRange">
+        <item>00–14 Years(Children)</item>
+        <item>15–24 Years(Youth)</item>
+        <item>25–64 Years(Adults)</item>
+        <item>65 and over(Seniors)</item>
+
     </string-array>
 
     <string-array name="hospital">

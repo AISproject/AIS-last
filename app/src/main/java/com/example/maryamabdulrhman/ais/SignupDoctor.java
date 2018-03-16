@@ -14,15 +14,15 @@ import java.util.Calendar;
 
 public class SignupDoctor extends AppCompatActivity {
     private static final String TAG="SignupDoctor";
-    private TextView mDisplayDate;
-    private DatePickerDialog.OnDateSetListener mDateSetListener;
+    private TextView DisplayDate;
+    private DatePickerDialog.OnDateSetListener DateSetListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_doctor);
-        mDisplayDate= (TextView) findViewById(R.id.bdate);
-        mDisplayDate.setOnClickListener(new View.OnClickListener() {
+        DisplayDate= (TextView) findViewById(R.id.bdate);
+        DisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Calendar c = Calendar.getInstance();
@@ -32,20 +32,20 @@ public class SignupDoctor extends AppCompatActivity {
                 DatePickerDialog dialog = new DatePickerDialog(
                         SignupDoctor.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        mDateSetListener,
+                        DateSetListener,
                         year,month,day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
 
             }
         });
-        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+        DateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 month=month+1;
-                Log.d(TAG,"onDateSet: mm/dd/yyy" + month + "/" + day + "/" + year );
-                String date= month + "/" + day + "/" + year;
-                mDisplayDate.setText(date);
+                Log.d(TAG,"onDateSet: dd/mm/yyy" + day + "/" + month + "/" + year );
+                String date= day + "/" + month+ "/" + year;
+                DisplayDate.setText(date);
             }
         };
     }
