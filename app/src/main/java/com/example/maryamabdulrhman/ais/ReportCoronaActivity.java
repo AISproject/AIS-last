@@ -22,7 +22,7 @@ public class ReportCoronaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_corona);
 
-        //get the date picker
+        //create date picker data
         DisplayDate= (TextView) findViewById(R.id.date);
         DisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override

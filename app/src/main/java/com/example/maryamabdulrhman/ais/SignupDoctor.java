@@ -21,6 +21,8 @@ public class SignupDoctor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_doctor);
+
+        //create date picker data
         DisplayDate= (TextView) findViewById(R.id.bdate);
         DisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override

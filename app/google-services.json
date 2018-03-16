@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1042714089236-i0617uunm0a1gtpl3qpmhni6ch9rn66r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.maryamabdulrhman.ais",
+            "certificate_hash": "d1960d67dd4f98e8c7a79b19b5f88336d484507c"
+          }
+        },
+        {
           "client_id": "1042714089236-ef0ubvpo7adn6sif41e49jugvt2mrc5s.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
