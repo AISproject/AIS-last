@@ -34,8 +34,8 @@ public class MainActivityPatient extends AppCompatActivity implements BottomNavi
                 fragment = new fragmentOutbreaks();
                 break;
 
-            case R.id.report:
-                fragment = new FragmentReportActivity();
+            case R.id.reportFlu:
+                fragment = new FragmentReportp();
                 break;
 
             case R.id.mydoctor:

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/Report"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+
+        android:text="@string/Report"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/reportFlu"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/Report"
+        android:layout_marginTop="138dp"
+        android:background="@android:color/holo_red_light"
+        android:text="@string/report_flu" />
+
+
+</RelativeLayout>
