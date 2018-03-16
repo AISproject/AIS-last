@@ -9,21 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".SignupDoctor"><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
-        <activity android:name=".signUpPatient">
-
-        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SignupDoctor" />
+        <activity android:name=".signUpPatient" />
         <activity android:name=".MainActivityPatient" />
-        <activity android:name=".MainDoctorActivity" />
+        <activity android:name=".MainDoctorActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ForgetpassworedActivity" />
-        <activity android:name=".ReportCoronaActivity"></activity>
+        <activity android:name=".ReportCoronaActivity" />
+        <activity android:name=".ReportfluActivity"></activity>
     </application>
 
 </manifest>

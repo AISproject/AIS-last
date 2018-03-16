@@ -23,7 +23,7 @@
     <Button
         android:id="@+id/reportFlu"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/reportCorona"
         android:layout_alignLeft="@+id/reportCorona"
@@ -37,7 +37,7 @@
     <Button
         android:id="@+id/reportCorona"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/reportFlu"
         android:layout_centerHorizontal="true"
