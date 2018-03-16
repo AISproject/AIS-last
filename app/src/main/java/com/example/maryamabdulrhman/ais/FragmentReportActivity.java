@@ -20,6 +20,7 @@ public class FragmentReportActivity extends Fragment {
         Button btn1=(Button) view.findViewById(R.id.reportFlu);
         Button btn2=(Button) view.findViewById(R.id.reportCorona);
 
+//move to reportFluActivity or reportCoronaActivity activity when press in button
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

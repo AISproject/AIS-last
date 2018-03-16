@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <Spinner
-        android:id="@+id/sgenderCorona"
+        android:id="@+id/gender"
         android:layout_width="230dp"
         android:layout_height="35dp"
         android:layout_alignLeft="@+id/genderTextCorona"
@@ -91,8 +91,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="@color/colorPrimary"
-        android:drawableLeft="@drawable/ic_action_back"
-        android:drawableStart="@drawable/ic_action_back"
+
         android:text="@string/Reportflu"
         android:textAlignment="center"
         android:textColor="@color/colorWhite"
@@ -115,10 +114,10 @@
         android:id="@+id/locationTextCorona"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/sgenderCorona"
-        android:layout_alignStart="@+id/sgenderCorona"
-        android:layout_below="@+id/sgenderCorona"
-        android:layout_marginTop="15dp"
+        android:layout_alignLeft="@+id/gender"
+        android:layout_alignStart="@+id/gender"
+        android:layout_below="@+id/gender"
+        android:layout_marginTop="32dp"
         android:text="@string/location" />
 
     <TextView
@@ -151,6 +150,6 @@
         android:layout_alignLeft="@+id/AgemonthCorona"
         android:layout_alignStart="@+id/AgemonthCorona"
         android:background="@android:color/holo_red_light"
-        android:text="@android:string/cancel" />
+        android:text="@string/cancel" />
 
 </RelativeLayout>
