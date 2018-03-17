@@ -11,7 +11,7 @@
     <string name="submit">Submit</string>
     <string name="Sing_upas">Sign up As:</string>
     <string name="or">OR</string>
-    <string name="cancel">cancel</string>
+    <string name="reset">Reset</string>
     <string name="date1">Date:</string>
 
 
@@ -70,6 +70,8 @@
         <item>Camel contact</item>
         <item>Human contact</item>
         <item>Unknown contact</item>
+        <item>None</item>
+
     </string-array>
 
     <string-array name="ageRange">
@@ -91,82 +93,7 @@
         <item>Heraa General Hospital- Makkah</item>
     </string-array>
 
-    <string-array name="year">
-        <item>1960</item>
-        <item>1961</item>
-        <item>1962</item>
-        <item>1963</item>
-        <item>1964</item>
-        <item>1965</item>
-        <item>1966</item>
-        <item>1967</item>
-        <item>1968</item>
-        <item>1969</item>
-        <item>1970</item>
-        <item>1971</item>
-        <item>1972</item>
-        <item>1973</item>
-        <item>1974</item>
-        <item>1975</item>
-        <item>1976</item>
-        <item>1978</item>
-        <item>1979</item>
-        <item>1980</item>
-        <item>1981</item>
-        <item>1982</item>
-        <item>1983</item>
-        <item>1984</item>
-        <item>1985</item>
-    </string-array>
 
-    <string-array name="month">
-        <item>01</item>
-        <item>02</item>
-        <item>03</item>
-        <item>04</item>
-        <item>05</item>
-        <item>06</item>
-        <item>07</item>
-        <item>08</item>
-        <item>09</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-    </string-array>
-
-    <string-array name="day">
-        <item>01</item>
-        <item>02</item>
-        <item>03</item>
-        <item>04</item>
-        <item>05</item>
-        <item>06</item>
-        <item>07</item>
-        <item>08</item>
-        <item>09</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
-        <item>20</item>
-        <item>21</item>
-        <item>22</item>
-        <item>23</item>
-        <item>24</item>
-        <item>25</item>
-        <item>26</item>
-        <item>27</item>
-        <item>28</item>
-        <item>29</item>
-        <item>30</item>
-        <item>31</item>
-    </string-array>
 
 
 

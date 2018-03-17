@@ -104,7 +104,7 @@
         android:layout_alignEnd="@+id/gender"
         android:layout_alignRight="@+id/gender"
         android:background="@android:color/holo_red_light"
-        android:text="@string/cancel" />
+        android:text="@string/reset" />
 
     <Spinner
         android:id="@+id/ageRange"

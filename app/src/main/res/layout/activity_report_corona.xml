@@ -68,8 +68,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/cancelBut"
-        android:layout_alignLeft="@+id/ContactType"
-        android:layout_alignStart="@+id/ContactType"
+        android:layout_alignLeft="@+id/type"
+        android:layout_alignStart="@+id/type"
         android:text="@string/location" />
 
     <TextView
@@ -104,7 +104,7 @@
         android:layout_alignEnd="@+id/gender"
         android:layout_alignRight="@+id/gender"
         android:background="@android:color/holo_red_light"
-        android:text="@string/cancel" />
+        android:text="@string/reset" />
 
     <Spinner
         android:id="@+id/ageRange"
@@ -128,7 +128,7 @@
         android:text="@string/type_of_contact" />
 
     <Spinner
-        android:id="@+id/ContactType"
+        android:id="@+id/type"
         android:layout_width="230dp"
         android:layout_height="35dp"
         android:layout_alignEnd="@+id/gender"
