@@ -10,6 +10,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -26,13 +28,12 @@ import java.util.HashMap;
 public class ReportfluActivity extends AppCompatActivity {
 
     private static final String TAG="ReportfluActivity";
-    private TextView DisplayDate;
+    private EditText DisplayDate;
     private DatePickerDialog.OnDateSetListener DateSetListener;
-    private Spinner gender;
+    private Spinner gender , age;
     private EditText date;
-    private Spinner age;
-    private Button report;
-    private Button clear;
+    private Button report , clear;
+
     private DatabaseReference database;
 
     @Override
@@ -41,7 +42,7 @@ public class ReportfluActivity extends AppCompatActivity {
         setContentView(R.layout.reportflu);
 
         //create date picker data and view in textfield by calling the id
-        DisplayDate = (TextView) findViewById(R.id.date);
+        DisplayDate = (EditText) findViewById(R.id.date);
         DisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,6 +86,70 @@ public class ReportfluActivity extends AppCompatActivity {
         report = (Button) findViewById(R.id.reportflubtn);
         clear=(Button) findViewById((R.id.cancelBut));//
 
+        //set hint text on gender spinner
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item){
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+
+                View v = super.getView(position, convertView, parent);
+                if (position == getCount()) {
+                    ((TextView)v.findViewById(android.R.id.text1)).setText("");
+                    ((TextView)v.findViewById(android.R.id.text1)).setHint(getItem(getCount())); //"Hint to be displayed"
+                }
+
+                return v;
+            }
+
+            @Override
+            public int getCount() {
+                return super.getCount()-1; //don't display the hint in the list.
+            }
+
+        };
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.add("Female");
+        adapter.add("Male");
+        adapter.add("Select the Gender"); //don't display last item put it as a hint.
+
+
+        gender.setAdapter(adapter);
+        gender.setSelection(adapter.getCount()); //set the hint as default selection
+
+//end of spinner hint for gender
+
+        //set hint text on Agerange spinner
+        ArrayAdapter<String> adapter2=new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item){
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+
+                View v = super.getView(position, convertView, parent);
+                if (position == getCount()) {
+                    ((TextView)v.findViewById(android.R.id.text1)).setText("");
+                    ((TextView)v.findViewById(android.R.id.text1)).setHint(getItem(getCount())); //"Hint to be displayed"
+                }
+
+                return v;
+            }
+
+            @Override
+            public int getCount() {
+                return super.getCount()-1; // don't display last item put it as a hint.
+            }
+
+        };
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter2.add("00–14 Years(Children)");
+        adapter2.add("15–24 Years(Youth)");
+        adapter2.add("25–64 Years(Adults)");
+        adapter2.add("65 and over(Seniors)");
+        adapter2.add("Select the age range"); //This is the text that will be displayed as hint.
+
+
+        age.setAdapter(adapter2);
+        age.setSelection(adapter2.getCount()); //set the hint as default selection
+
+        //end of spinner hint for age range
+
         //add listener to report buttons
         report.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,13 +159,13 @@ public class ReportfluActivity extends AppCompatActivity {
             }
 
         });
-        //clear and reset the field to the ordinal
+        //clear and reset the field to the original
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 date.setText("");
-                gender.setSelection(0);
-                age.setSelection(0);
+                gender.setSelection(2);
+                age.setSelection(4);
 
 
             }
@@ -113,8 +178,8 @@ private void StoreReport() {
     final String gender1 = gender.getSelectedItem().toString();
     final String age1 = age.getSelectedItem().toString();
     //check if the date is enter
-    if (TextUtils.isEmpty(date1)) {
-        Toast.makeText(getApplicationContext(), "Enter the date", Toast.LENGTH_SHORT).show();
+    if (TextUtils.isEmpty(date1)||gender.getSelectedItem()=="Select the Gender"||age.getSelectedItem()=="Select the age range") {
+        Toast.makeText(getApplicationContext(), "Make sure you entered all required data", Toast.LENGTH_SHORT).show();
         //push all the data to firebase with attribute name
     } else {
         HashMap h = new HashMap();

@@ -12,8 +12,8 @@
         android:layout_alignRight="@+id/ageRange"
         android:layout_alignStart="@+id/genderTextCorona"
         android:layout_below="@+id/genderTextCorona"
-        android:entries="@array/gender"
-        android:spinnerMode="dropdown" />
+        android:spinnerMode="dropdown"
+        />
 
     <TextView
         android:id="@+id/genderTextCorona"
@@ -41,9 +41,7 @@
         android:id="@+id/reportCoronaNav"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-
         android:layout_alignParentLeft="true"
-
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="@color/colorPrimary"
@@ -67,9 +65,10 @@
         android:id="@+id/locationTextCorona"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/cancelBut"
         android:layout_alignLeft="@+id/type"
         android:layout_alignStart="@+id/type"
+        android:layout_below="@+id/type"
+        android:layout_marginTop="22dp"
         android:text="@string/location" />
 
     <TextView
@@ -88,9 +87,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/locationTextCorona"
-        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/locationTextCorona"
-        android:layout_marginBottom="26dp"
+        android:layout_below="@+id/locationTextCorona"
+        android:layout_marginTop="54dp"
+        android:layout_toLeftOf="@+id/star14"
+        android:layout_toStartOf="@+id/star14"
         android:background="@android:color/holo_red_light"
         android:text="@string/report" />
 
@@ -99,10 +100,12 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/reportCoronabu"
-        android:layout_alignBottom="@+id/reportCoronabu"
-        android:layout_alignEnd="@+id/gender"
-        android:layout_alignRight="@+id/gender"
+        android:layout_alignEnd="@+id/reportCoronabu"
+        android:layout_alignLeft="@+id/reportCoronabu"
+        android:layout_alignRight="@+id/reportCoronabu"
+        android:layout_alignStart="@+id/reportCoronabu"
+        android:layout_alignTop="@+id/reportCoronabu"
+        android:layout_marginTop="50dp"
         android:background="@android:color/holo_red_light"
         android:text="@string/reset" />
 
@@ -115,7 +118,7 @@
         android:layout_alignRight="@+id/date"
         android:layout_alignStart="@+id/ageText"
         android:layout_below="@+id/ageText"
-        android:entries="@array/ageRange" />
+         />
 
     <TextView
         android:id="@+id/typeOfContact"
@@ -136,6 +139,58 @@
         android:layout_alignRight="@+id/gender"
         android:layout_alignStart="@+id/typeOfContact"
         android:layout_below="@+id/typeOfContact"
-        android:entries="@array/TypeOfContact" />
+        />
+
+    <TextView
+        android:id="@+id/star1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/date"
+        android:layout_alignBottom="@+id/date"
+        android:layout_toEndOf="@+id/date"
+        android:layout_toRightOf="@+id/date"
+        android:text="@string/star"
+        android:textColor="@color/colorRed" />
+
+    <TextView
+        android:id="@+id/star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ageRange"
+        android:layout_toEndOf="@+id/ageRange"
+        android:layout_toRightOf="@+id/ageRange"
+        android:text="@string/star"
+        android:textColor="@color/colorRed" />
+
+    <TextView
+        android:id="@+id/star12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/genderTextCorona"
+        android:layout_toEndOf="@+id/gender"
+        android:layout_toRightOf="@+id/gender"
+        android:text="@string/star"
+        android:textColor="@color/colorRed" />
+
+    <TextView
+        android:id="@+id/star13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/type"
+        android:layout_toEndOf="@+id/type"
+        android:layout_toRightOf="@+id/type"
+        android:text="@string/star"
+        android:textColor="@color/colorRed" />
+
+    <TextView
+        android:id="@+id/star14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/locationTextCorona"
+        android:layout_alignBottom="@+id/locationTextCorona"
+        android:layout_alignEnd="@+id/star13"
+        android:layout_alignRight="@+id/star13"
+        android:text="@string/star"
+        android:textColor="@color/colorRed" />
 
 </RelativeLayout>
