@@ -9,8 +9,7 @@
         android:layout_height="35dp"
         android:layout_alignLeft="@+id/genderTextCorona"
         android:layout_alignStart="@+id/genderTextCorona"
-        android:layout_below="@+id/genderTextCorona"
-        android:layout_marginTop="13dp"
+        android:layout_centerVertical="true"
         android:entries="@array/gender"
         android:spinnerMode="dropdown" />
 
@@ -18,30 +17,19 @@
         android:id="@+id/genderTextCorona"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/AgeyearCorona"
-        android:layout_alignStart="@+id/AgeyearCorona"
-        android:layout_below="@+id/AgeyearCorona"
-        android:layout_marginTop="23dp"
+        android:layout_alignLeft="@+id/dateyearCorona"
+        android:layout_alignStart="@+id/dateyearCorona"
+        android:layout_below="@+id/ageText"
+        android:layout_marginTop="35dp"
         android:text="@string/Gender" />
-
-    <Spinner
-        android:id="@+id/AgemonthCorona"
-        android:layout_width="90dp"
-        android:layout_height="35dp"
-        android:layout_alignLeft="@+id/datemonthCorona"
-        android:layout_alignStart="@+id/datemonthCorona"
-        android:layout_alignTop="@+id/AgedayCorona"
-        android:entries="@array/month" />
 
     <Spinner
         android:id="@+id/datemonthCorona"
         android:layout_width="90dp"
         android:layout_height="35dp"
-        android:layout_alignTop="@+id/datedayCorona"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_toEndOf="@+id/datedayCorona"
-        android:layout_toRightOf="@+id/datedayCorona"
+        android:layout_alignBaseline="@+id/dateyearCorona"
+        android:layout_alignBottom="@+id/dateyearCorona"
+        android:layout_centerHorizontal="true"
         android:entries="@array/month" />
 
     <Spinner
@@ -50,27 +38,11 @@
         android:layout_height="35dp"
         android:layout_alignBaseline="@+id/dateyearCorona"
         android:layout_alignBottom="@+id/dateyearCorona"
-        android:layout_alignLeft="@+id/AgedayCorona"
-        android:layout_alignStart="@+id/AgedayCorona"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:entries="@array/day" />
-
-    <Spinner
-        android:id="@+id/AgedayCorona"
-        android:layout_width="90dp"
-        android:layout_height="35dp"
-        android:layout_alignTop="@+id/AgeyearCorona"
-        android:layout_centerHorizontal="true"
-        android:entries="@array/day" />
-
-    <Spinner
-        android:id="@+id/AgeyearCorona"
-        android:layout_width="100dp"
-        android:layout_height="35dp"
-        android:layout_alignLeft="@+id/dateyearCorona"
-        android:layout_alignStart="@+id/dateyearCorona"
-        android:layout_below="@+id/datedayCorona"
-        android:layout_marginTop="42dp"
-        android:entries="@array/year" />
 
     <Spinner
         android:id="@+id/dateyearCorona"
@@ -79,7 +51,7 @@
         android:layout_alignLeft="@+id/DateTextCorona"
         android:layout_alignStart="@+id/DateTextCorona"
         android:layout_below="@+id/DateTextCorona"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="20dp"
         android:entries="@array/year" />
 
     <TextView
@@ -103,31 +75,32 @@
         android:id="@+id/DateTextCorona"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/ageText"
+        android:layout_alignRight="@+id/ageText"
         android:layout_below="@+id/reportCoronaNav"
-        android:layout_marginLeft="26dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="32dp"
         android:text="@string/date" />
 
     <TextView
         android:id="@+id/locationTextCorona"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/sgenderCorona"
-        android:layout_alignStart="@+id/sgenderCorona"
+        android:layout_alignLeft="@+id/ageText"
+        android:layout_alignStart="@+id/ageText"
         android:layout_below="@+id/sgenderCorona"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:text="@string/location" />
 
     <TextView
         android:id="@+id/ageText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/AgedayCorona"
-        android:layout_alignLeft="@+id/AgeyearCorona"
-        android:layout_alignStart="@+id/AgeyearCorona"
+        android:layout_alignEnd="@+id/cancelBut"
+        android:layout_alignRight="@+id/cancelBut"
+        android:layout_below="@+id/datemonthCorona"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginTop="18dp"
         android:text="@string/age" />
 
     <Button
@@ -135,10 +108,10 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/AgeyearCorona"
+        android:layout_alignEnd="@+id/datedayCorona"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/AgeyearCorona"
-        android:layout_marginBottom="14dp"
+        android:layout_alignRight="@+id/datedayCorona"
+        android:layout_marginBottom="19dp"
         android:background="@android:color/holo_red_light"
         android:text="@string/report" />
 
@@ -148,9 +121,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/reportCoronabu"
-        android:layout_alignLeft="@+id/AgemonthCorona"
-        android:layout_alignStart="@+id/AgemonthCorona"
         android:background="@android:color/holo_red_light"
         android:text="@android:string/cancel" />
+
+    <Spinner
+        android:id="@+id/Agespinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ageText"
+        android:layout_alignStart="@+id/ageText"
+        android:layout_below="@+id/ageText"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:id="@+id/get_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/datemonthCorona"
+        android:layout_alignStart="@+id/datemonthCorona"
+        android:layout_below="@+id/locationTextCorona"
+        android:layout_marginTop="33dp"
+        android:text="@string/get_place" />
 
 </RelativeLayout>

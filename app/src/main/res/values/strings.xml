@@ -56,7 +56,14 @@
     <string name="reportcorona1">Report Corona</string>
     <string name="type_of_contact">Type of contact:</string>
     <string name="get_place">get place</string>
+    <string name="getlocation">location</string>
 
+    <string-array name="Age">
+        <item>Children(0_14)</item>
+        <item>Youth(15_24)</item>
+        <item>Adults(25_64)</item>
+        <item>Seniors(65 years and over)</item>
+    </string-array>
 
     <string-array name="gender">
         <item>Male</item>
