@@ -1,6 +1,8 @@
 package com.example.maryamabdulrhman.ais;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
@@ -15,23 +17,29 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class ReportfluActivity extends AppCompatActivity {
+public class ReportfluPatientActivity extends AppCompatActivity {
 
-    private static final String TAG="ReportfluActivity";
+    private static final String TAG="ReportfluPatientActivity";
     private EditText DisplayDate;
     private DatePickerDialog.OnDateSetListener DateSetListener;
     private Spinner gender , age;
     private EditText date;
+    private RadioGroup radioGroup;
+    private RadioButton monitor,advice,none;
     private Button report , clear;
 
     private DatabaseReference database;
@@ -39,7 +47,7 @@ public class ReportfluActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.reportflu);
+        setContentView(R.layout.activity_reportflu_patient);
 
         //create date picker data and view in textfield by calling the id
         DisplayDate = (EditText) findViewById(R.id.date);
@@ -54,7 +62,7 @@ public class ReportfluActivity extends AppCompatActivity {
                 int month = c.get(Calendar.MONTH);
                 int day = c.get(Calendar.DAY_OF_MONTH);
                 DatePickerDialog dialog = new DatePickerDialog(
-                        ReportfluActivity.this,
+                        ReportfluPatientActivity.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         DateSetListener,
                         year, month, day);
@@ -66,6 +74,7 @@ public class ReportfluActivity extends AppCompatActivity {
             }
         });
         DateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @SuppressLint("LongLogTag")
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 month = month + 1;
@@ -89,7 +98,10 @@ public class ReportfluActivity extends AppCompatActivity {
         date = (EditText) findViewById(R.id.date);
         age = (Spinner) findViewById(R.id.ageRange);
         report = (Button) findViewById(R.id.reportflubtn);
-        clear=(Button) findViewById((R.id.cancelBut));//
+        clear=(Button) findViewById((R.id.cancelBut));
+        radioGroup=(RadioGroup) findViewById(R.id.rgroup);
+//
+
 
         //set hint text on gender spinner
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item){
@@ -159,7 +171,9 @@ public class ReportfluActivity extends AppCompatActivity {
         report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                StoreReport();//
+                StoreReport();
+
+
 
             }
 
@@ -171,47 +185,51 @@ public class ReportfluActivity extends AppCompatActivity {
                 date.setText("");
                 gender.setSelection(2);
                 age.setSelection(4);
+                radioGroup.clearCheck();
 
 
             }
         });//
 
     }
-//this method to get report data and push it to firebase
-private void StoreReport() {
-    final String date1 = date.getText().toString();
-    final String gender1 = gender.getSelectedItem().toString();
-    final String age1 = age.getSelectedItem().toString();
-    //check if the date is enter
 
-    //check if all data are entered
-    if (TextUtils.isEmpty(date1)|| gender.getSelectedItem()=="Select the Gender"||age.getSelectedItem()=="Select the age range") {
-        Toast.makeText(getApplicationContext(), "Make sure you entered all the data", Toast.LENGTH_SHORT).show();
-        return;
+    //this method to get report data and push it to firebase
+    private void StoreReport() {
+        final String date1 = date.getText().toString();
+        final String gender1 = gender.getSelectedItem().toString();
+        final String age1 = age.getSelectedItem().toString();
+        final int r=radioGroup.getCheckedRadioButtonId();
 
-    }
-    else {
-        HashMap h = new HashMap();
-        h.put("Date:", date1);
-        h.put("Age", age1);
-        h.put("Gender", gender1);
-        database.setValue(h).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()) {
-                    Toast.makeText(ReportfluActivity.this, "successfully added", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(ReportfluActivity.this, "Error", Toast.LENGTH_LONG).show();
+        //check if all data are entered
+        if (TextUtils.isEmpty(date1)|| gender.getSelectedItem()=="Select the Gender"||age.getSelectedItem()=="Select the age range"||radioGroup.getCheckedRadioButtonId()==-1) {
+            Toast.makeText(getApplicationContext(), "Make sure you entered all the data", Toast.LENGTH_SHORT).show();
+            return;
+
+        }
+        else {
+
+            HashMap h = new HashMap();
+            h.put("Date:", date1);
+            h.put("Age", age1);
+            h.put("Gender", gender1);
+            h.put("What do you prefer?",r);
+            database.setValue(h).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(ReportfluPatientActivity.this, "successfully added", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(ReportfluPatientActivity.this, "Error", Toast.LENGTH_LONG).show();
+                    }
+
                 }
 
-            }
+            });
 
-        });
 
+        }
 
     }
-
-}
 
 
 
@@ -223,7 +241,7 @@ private void StoreReport() {
         if(id== android.R.id.home){
             this.finish();
         }
-return onContextItemSelected(item);
+        return onContextItemSelected(item);
     }
 
 

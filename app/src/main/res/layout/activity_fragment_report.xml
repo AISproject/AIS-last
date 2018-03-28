@@ -22,22 +22,20 @@
     <Button
         android:id="@+id/reportFlu"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/reportCorona"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
         android:layout_alignLeft="@+id/reportCorona"
-        android:layout_alignRight="@+id/reportCorona"
         android:layout_alignStart="@+id/reportCorona"
         android:layout_below="@+id/Report"
-        android:layout_marginTop="138dp"
+        android:layout_marginTop="103dp"
         android:background="@android:color/holo_red_light"
         android:text="@string/report_flu" />
 
     <Button
         android:id="@+id/reportCorona"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
         android:layout_below="@+id/reportFlu"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"

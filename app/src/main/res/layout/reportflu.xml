@@ -31,7 +31,7 @@
         android:layout_below="@+id/DateText"
         android:layout_centerHorizontal="true"
         android:focusable="false"
-        android:hint="@string/date"
+        android:hint="@string/date2"
         android:inputType="date"
         android:textSize="12sp" />
 

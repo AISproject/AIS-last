@@ -13,6 +13,13 @@
     <string name="or">OR</string>
     <string name="reset">Reset</string>
     <string name="date1">Date:</string>
+    <string name="date2">dd/mm/yyy</string>
+    <string name="que">What do you prefer?</string>
+    <string name="Dmonitor">Doctor monitor</string>
+    <string name="Dadvice">Doctor Advice</string>
+
+
+
 
 
     <string name="Sing_upD">Doctor</string>
@@ -93,10 +100,6 @@
         <item>King Faisal Hospital- Makkah</item>
         <item>Heraa General Hospital- Makkah</item>
     </string-array>
-
-
-
-
 
 
 </resources>
