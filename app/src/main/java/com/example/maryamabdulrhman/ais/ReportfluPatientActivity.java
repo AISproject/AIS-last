@@ -2,6 +2,7 @@ package com.example.maryamabdulrhman.ais;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -39,7 +40,7 @@ public class ReportfluPatientActivity extends AppCompatActivity {
     private Spinner gender , age;
     private EditText date;
     private RadioGroup radioGroup;
-    private RadioButton monitor,advice,none;
+    private RadioButton mon,adv,non;
     private Button report , clear;
 
     private DatabaseReference database;
@@ -100,6 +101,8 @@ public class ReportfluPatientActivity extends AppCompatActivity {
         report = (Button) findViewById(R.id.reportflubtn);
         clear=(Button) findViewById((R.id.cancelBut));
         radioGroup=(RadioGroup) findViewById(R.id.rgroup);
+        mon=(RadioButton) findViewById(R.id.monitor);
+        adv=(RadioButton) findViewById(R.id.advice);
 //
 
 
@@ -171,7 +174,9 @@ public class ReportfluPatientActivity extends AppCompatActivity {
         report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 StoreReport();
+
 
 
 
@@ -200,14 +205,14 @@ public class ReportfluPatientActivity extends AppCompatActivity {
         final String age1 = age.getSelectedItem().toString();
         final int r=radioGroup.getCheckedRadioButtonId();
 
+
         //check if all data are entered
         if (TextUtils.isEmpty(date1)|| gender.getSelectedItem()=="Select the Gender"||age.getSelectedItem()=="Select the age range"||radioGroup.getCheckedRadioButtonId()==-1) {
             Toast.makeText(getApplicationContext(), "Make sure you entered all the data", Toast.LENGTH_SHORT).show();
-            return;
+
 
         }
         else {
-
             HashMap h = new HashMap();
             h.put("Date:", date1);
             h.put("Age", age1);
@@ -217,6 +222,7 @@ public class ReportfluPatientActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
+
                         Toast.makeText(ReportfluPatientActivity.this, "successfully added", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(ReportfluPatientActivity.this, "Error", Toast.LENGTH_LONG).show();
@@ -225,12 +231,29 @@ public class ReportfluPatientActivity extends AppCompatActivity {
                 }
 
             });
+                           if(mon.isChecked()||adv.isChecked()){
+
+
+                Intent intent=new Intent(ReportfluPatientActivity.this,ReportfluPatientActivity.class);
+                startActivity(intent);
+
+
+            }
+
+            else {
+                               Intent intent=new Intent(ReportfluPatientActivity.this,ReportfluActivity.class);
+                               startActivity(intent);
+
+
+            }
+
+
+
 
 
         }
 
     }
-
 
 
 
@@ -242,7 +265,7 @@ public class ReportfluPatientActivity extends AppCompatActivity {
             this.finish();
         }
         return onContextItemSelected(item);
-    }
+    }//
 
 
 }
