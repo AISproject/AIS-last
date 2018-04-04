@@ -19,9 +19,6 @@
     <string name="Dadvice">Doctor Advice</string>
 
 
-
-
-
     <string name="Sing_upD">Doctor</string>
     <string name="Sing_upP">Patient</string>
     <string name="star">*</string>
@@ -100,6 +97,7 @@
         <item>King Faisal Hospital- Makkah</item>
         <item>Heraa General Hospital- Makkah</item>
     </string-array>
+    <string name="title_activity_maps">Map</string>
 
 
 </resources>

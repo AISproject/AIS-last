@@ -36,9 +36,9 @@
         android:layout_height="35dp"
         android:layout_below="@+id/DateText"
         android:layout_centerHorizontal="true"
-        android:focusable="false"
+        android:focusable="true"
+   android:focusableInTouchMode="true"
         android:hint="@string/date2"
-        android:inputType="date"
         android:textSize="12sp" />
 
     <TextView
@@ -232,7 +232,7 @@
             android:textSize="12sp" />
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/none"
             android:layout_width="match_parent"
             android:layout_height="4dp"
             android:layout_weight="1"

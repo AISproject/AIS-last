@@ -51,6 +51,7 @@ public class ReportfluPatientActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reportflu_patient);
 
         //create date picker data and view in textfield by calling the id
+
         DisplayDate = (EditText) findViewById(R.id.date);
 
         DisplayDate.setOnClickListener(new View.OnClickListener() {
@@ -103,6 +104,7 @@ public class ReportfluPatientActivity extends AppCompatActivity {
         radioGroup=(RadioGroup) findViewById(R.id.rgroup);
         mon=(RadioButton) findViewById(R.id.monitor);
         adv=(RadioButton) findViewById(R.id.advice);
+        non=(RadioButton) findViewById(R.id.none);
 //
 
 
@@ -196,6 +198,10 @@ public class ReportfluPatientActivity extends AppCompatActivity {
             }
         });//
 
+        mon.setChecked(false);
+        adv.setChecked(false);
+        non.setChecked(true);
+
     }
 
     //this method to get report data and push it to firebase
@@ -204,20 +210,36 @@ public class ReportfluPatientActivity extends AppCompatActivity {
         final String gender1 = gender.getSelectedItem().toString();
         final String age1 = age.getSelectedItem().toString();
         final int r=radioGroup.getCheckedRadioButtonId();
+        TextView genderer=(TextView) gender.getSelectedView();
+        TextView ageer=(TextView) age.getSelectedView();
+
+
+
+        if (TextUtils.isEmpty(date1)){
+
+            date.setError("please enter the date");
+            date.requestFocus();
+
+        }
+        if(gender.getSelectedItem()=="Select the Gender"){
+            genderer.setError("Please select the gender");
+
+        }
+        if(age.getSelectedItem()=="Select the age range"){
+
+            ageer.setError("Please select the age");
+        }
 
 
         //check if all data are entered
-        if (TextUtils.isEmpty(date1)|| gender.getSelectedItem()=="Select the Gender"||age.getSelectedItem()=="Select the age range"||radioGroup.getCheckedRadioButtonId()==-1) {
+        /*if (TextUtils.isEmpty(date1)|| gender.getSelectedItem()=="Select the Gender"||age.getSelectedItem()=="Select the age range"||radioGroup.getCheckedRadioButtonId()==-1) {
             Toast.makeText(getApplicationContext(), "Make sure you entered all the data", Toast.LENGTH_SHORT).show();
-
-
-        }
+        }*/
         else {
             HashMap h = new HashMap();
             h.put("Date:", date1);
             h.put("Age", age1);
             h.put("Gender", gender1);
-            h.put("What do you prefer?",r);
             database.setValue(h).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
