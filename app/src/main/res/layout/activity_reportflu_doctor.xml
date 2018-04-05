@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/gender"
+            android:layout_width="230dp"
+            android:layout_height="35dp"
+            android:layout_alignEnd="@+id/date"
+            android:layout_alignLeft="@+id/genderTextCorona"
+            android:layout_alignRight="@+id/date"
+            android:layout_alignStart="@+id/genderTextCorona"
+            android:layout_below="@+id/genderTextCorona"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:id="@+id/genderTextCorona"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/ageRange"
+            android:layout_alignStart="@+id/ageRange"
+            android:layout_below="@+id/ageRange"
+            android:text="@string/Gender" />
+
+
+        <EditText
+            android:id="@+id/date"
+            android:layout_width="270dp"
+            android:layout_height="35dp"
+            android:layout_below="@+id/DateText"
+            android:layout_centerHorizontal="true"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:hint="@string/date2"
+            android:inputType="date"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/reportCoronaNav"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorPrimary"
+            android:text="@string/Reportflu"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/DateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/date"
+            android:layout_alignStart="@+id/date"
+            android:layout_below="@+id/reportCoronaNav"
+            android:layout_marginTop="42dp"
+            android:text="@string/date" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/gender"
+            android:layout_alignStart="@+id/gender"
+            android:layout_below="@+id/gender"
+            android:layout_marginTop="24dp"
+            android:text="@string/location" />
+
+        <TextView
+            android:id="@+id/ageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/date"
+            android:layout_alignStart="@+id/date"
+            android:layout_below="@+id/date"
+            android:layout_marginTop="18dp"
+            android:text="@string/age" />
+
+        <Button
+            android:id="@+id/reportflubtn"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/star18"
+            android:layout_alignRight="@+id/star18"
+            android:layout_below="@+id/location"
+            android:layout_marginTop="60dp"
+            android:background="@android:color/holo_red_light"
+            android:text="@string/report" />
+
+        <Button
+            android:id="@+id/cancelBut"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/reportflubtn"
+            android:layout_alignLeft="@+id/reportflubtn"
+            android:layout_alignRight="@+id/reportflubtn"
+            android:layout_alignStart="@+id/reportflubtn"
+            android:layout_below="@+id/reportflubtn"
+            android:layout_marginTop="3dp"
+            android:background="@android:color/holo_red_light"
+            android:text="@string/reset" />
+
+        <Spinner
+            android:id="@+id/ageRange"
+            android:layout_width="230dp"
+            android:layout_height="35dp"
+            android:layout_alignEnd="@+id/date"
+            android:layout_alignLeft="@+id/ageText"
+            android:layout_alignRight="@+id/date"
+            android:layout_alignStart="@+id/ageText"
+            android:layout_below="@+id/ageText"
+            />
+
+        <TextView
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ageRange"
+            android:layout_toEndOf="@+id/ageRange"
+            android:layout_toRightOf="@+id/ageRange"
+            android:text="@string/star"
+            android:textColor="@color/colorRed" />
+
+        <TextView
+            android:id="@+id/star17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/gender"
+            android:layout_toEndOf="@+id/gender"
+            android:layout_toRightOf="@+id/gender"
+            android:text="@string/star"
+            android:textColor="@color/colorRed" />
+
+        <TextView
+            android:id="@+id/star18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/reportflubtn"
+            android:layout_toEndOf="@+id/gender"
+            android:layout_toRightOf="@+id/gender"
+            android:text="@string/star"
+            android:textColor="@color/colorRed" />
+
+
+
+        <TextView
+            android:id="@+id/star16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/date"
+            android:layout_alignBottom="@+id/date"
+            android:layout_toEndOf="@+id/date"
+            android:layout_toRightOf="@+id/date"
+            android:text="@string/star"
+            android:textColor="@color/colorRed" />
+
+        <TextView
+            android:id="@+id/star15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/date"
+            android:layout_toEndOf="@+id/date"
+            android:layout_toLeftOf="@+id/star"
+            android:layout_toRightOf="@+id/date"
+            android:layout_toStartOf="@+id/star"
+            android:text="@string/star"
+            android:textColor="@color/colorRed" />
+
+
+
+    </RelativeLayout>
+</ScrollView>

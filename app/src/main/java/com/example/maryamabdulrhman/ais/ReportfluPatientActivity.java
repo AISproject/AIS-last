@@ -2,8 +2,8 @@ package com.example.maryamabdulrhman.ais;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.DataSetObserver;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -23,11 +24,11 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -37,13 +38,15 @@ public class ReportfluPatientActivity extends AppCompatActivity {
     private static final String TAG="ReportfluPatientActivity";
     private EditText DisplayDate;
     private DatePickerDialog.OnDateSetListener DateSetListener;
-    private Spinner gender , age;
-    private EditText date;
+    private Spinner gender1,age1;
+    private EditText date1;
     private RadioGroup radioGroup;
     private RadioButton mon,adv,non;
-    private Button report , clear;
+    private Button report1;
+    private Button clear;
+    private DatabaseReference database1;
+    // Initializing a String Array
 
-    private DatabaseReference database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +54,7 @@ public class ReportfluPatientActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reportflu_patient);
 
         //create date picker data and view in textfield by calling the id
-
         DisplayDate = (EditText) findViewById(R.id.date);
-
         DisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +73,7 @@ public class ReportfluPatientActivity extends AppCompatActivity {
                 dialog.getDatePicker().setMaxDate(ul);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
+
 
             }
         });
@@ -92,21 +94,21 @@ public class ReportfluPatientActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);//
 
         //getting reference and push flu node to firebase
-        database = FirebaseDatabase.getInstance().getReference().child("Flu").push();//
+        database1 = FirebaseDatabase.getInstance().getReference().child("Flu").push();//
+
 
 
         //initializing views
-        gender = (Spinner) findViewById(R.id.gender);
-        date = (EditText) findViewById(R.id.date);
-        age = (Spinner) findViewById(R.id.ageRange);
-        report = (Button) findViewById(R.id.reportflubtn);
+        gender1 = (Spinner) findViewById(R.id.gender);
+        date1 = (EditText) findViewById(R.id.date);
+        age1 = (Spinner) findViewById(R.id.ageRange);
+        report1 = (Button) findViewById(R.id.reportflubtn);
         clear=(Button) findViewById((R.id.cancelBut));
         radioGroup=(RadioGroup) findViewById(R.id.rgroup);
         mon=(RadioButton) findViewById(R.id.monitor);
         adv=(RadioButton) findViewById(R.id.advice);
         non=(RadioButton) findViewById(R.id.none);
 //
-
 
         //set hint text on gender spinner
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item){
@@ -134,8 +136,8 @@ public class ReportfluPatientActivity extends AppCompatActivity {
         adapter.add("Select the Gender"); //don't display last item put it as a hint.
 
 
-        gender.setAdapter(adapter);
-        gender.setSelection(adapter.getCount()); //set the hint as default selection
+        gender1.setAdapter(adapter);
+        gender1.setSelection(adapter.getCount()); //set the hint as default selection
 
 //end of spinner hint for gender
 
@@ -164,23 +166,21 @@ public class ReportfluPatientActivity extends AppCompatActivity {
         adapter2.add("15–24 Years(Youth)");
         adapter2.add("25–64 Years(Adults)");
         adapter2.add("65 and over(Seniors)");
-        adapter2.add("Select the age range"); //This is the text that will be displayed as hint.
+        adapter2.add("Select your age range"); //This is the text that will be displayed as hint.
 
 
-        age.setAdapter(adapter2);
-        age.setSelection(adapter2.getCount()); //set the hint as default selection
+        age1.setAdapter(adapter2);
+        age1.setSelection(adapter2.getCount()); //set the hint as default selection
 
         //end of spinner hint for age range
 
+
+
         //add listener to report buttons
-        report.setOnClickListener(new View.OnClickListener() {
+        report1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                StoreReport();
-
-
-
+                StoreReport();//
 
             }
 
@@ -189,58 +189,42 @@ public class ReportfluPatientActivity extends AppCompatActivity {
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                date.setText("");
-                gender.setSelection(2);
-                age.setSelection(4);
-                radioGroup.clearCheck();
+                date1.setText("");
+                gender1.setSelection(2);
+                age1.setSelection(4);
 
 
             }
         });//
-
         mon.setChecked(false);
         adv.setChecked(false);
         non.setChecked(true);
 
     }
-
     //this method to get report data and push it to firebase
     private void StoreReport() {
-        final String date1 = date.getText().toString();
-        final String gender1 = gender.getSelectedItem().toString();
-        final String age1 = age.getSelectedItem().toString();
-        final int r=radioGroup.getCheckedRadioButtonId();
-        TextView genderer=(TextView) gender.getSelectedView();
-        TextView ageer=(TextView) age.getSelectedView();
+        final String date2 = date1.getText().toString();
+        final String gender2 = gender1.getSelectedItem().toString();
+        final String age2 = age1.getSelectedItem().toString();
 
 
-
-        if (TextUtils.isEmpty(date1)){
-
-            date.setError("please enter the date");
-            date.requestFocus();
-
-        }
-        if(gender.getSelectedItem()=="Select the Gender"){
-            genderer.setError("Please select the gender");
-
-        }
-        if(age.getSelectedItem()=="Select the age range"){
-
-            ageer.setError("Please select the age");
-        }
 
 
         //check if all data are entered
-        /*if (TextUtils.isEmpty(date1)|| gender.getSelectedItem()=="Select the Gender"||age.getSelectedItem()=="Select the age range"||radioGroup.getCheckedRadioButtonId()==-1) {
-            Toast.makeText(getApplicationContext(), "Make sure you entered all the data", Toast.LENGTH_SHORT).show();
-        }*/
+        if (TextUtils.isEmpty(date2)|| gender1.getSelectedItem()=="Select the Gender"||age1.getSelectedItem()=="Select the age range") {
+            Toast.makeText(getApplicationContext(), "Make sure you entered all the required data", Toast.LENGTH_SHORT).show();
+            return;
+
+        }
+
+        //push all the data to firebase with attribute name
+
         else {
             HashMap h = new HashMap();
-            h.put("Date:", date1);
-            h.put("Age", age1);
-            h.put("Gender", gender1);
-            database.setValue(h).addOnCompleteListener(new OnCompleteListener<Void>() {
+            h.put("Date:", date2);
+            h.put("Age", age2);
+            h.put("Gender", gender2);
+            database1.setValue(h).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
@@ -253,7 +237,7 @@ public class ReportfluPatientActivity extends AppCompatActivity {
                 }
 
             });
-                           if(mon.isChecked()||adv.isChecked()){
+            if(mon.isChecked()||adv.isChecked()){
 
 
                 Intent intent=new Intent(ReportfluPatientActivity.this,ReportfluPatientActivity.class);
@@ -263,21 +247,13 @@ public class ReportfluPatientActivity extends AppCompatActivity {
             }
 
             else {
-                               Intent intent=new Intent(ReportfluPatientActivity.this,ReportfluActivity.class);
-                               startActivity(intent);
-
-
+                Intent intent=new Intent(ReportfluPatientActivity.this,reportfluDoctor.class);
+                startActivity(intent);
             }
-
-
-
-
 
         }
 
     }
-
-
 
     //back to report interface method
     @Override

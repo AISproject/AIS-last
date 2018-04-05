@@ -36,9 +36,10 @@
         android:layout_height="35dp"
         android:layout_below="@+id/DateText"
         android:layout_centerHorizontal="true"
-        android:focusable="true"
+        android:focusable="false"
    android:focusableInTouchMode="true"
         android:hint="@string/date2"
+        android:inputType="date"
         android:textSize="12sp" />
 
     <TextView
@@ -109,7 +110,7 @@
         android:layout_alignRight="@+id/reportflubtn"
         android:layout_alignStart="@+id/reportflubtn"
         android:layout_below="@+id/reportflubtn"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="3dp"
         android:background="@android:color/holo_red_light"
         android:text="@string/reset" />
 

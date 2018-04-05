@@ -53,6 +53,8 @@ public class ReportCoronaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Calendar c = Calendar.getInstance();
+                c.add(Calendar.YEAR,0);
+                long ul = c.getTimeInMillis();
                 int year = c.get(Calendar.YEAR);
                 int month = c.get(Calendar.MONTH);
                 int day = c.get(Calendar.DAY_OF_MONTH);
@@ -61,8 +63,11 @@ public class ReportCoronaActivity extends AppCompatActivity {
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         DateSetListener,
                         year, month, day);
+                dialog.getDatePicker().setMinDate(ul);
+                dialog.getDatePicker().setMaxDate(ul);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
+
 
             }
         });
@@ -149,7 +154,7 @@ public class ReportCoronaActivity extends AppCompatActivity {
         adapter2.add("15–24 Years(Youth)");
         adapter2.add("25–64 Years(Adults)");
         adapter2.add("65 and over(Seniors)");
-        adapter2.add("Select the age range"); //This is the text that will be displayed as hint.
+        adapter2.add("Select your age range"); //This is the text that will be displayed as hint.
 
 
         age1.setAdapter(adapter2);
@@ -190,13 +195,6 @@ public class ReportCoronaActivity extends AppCompatActivity {
 //end of spinner hint for type
 
 
-
-
-
-
-
-
-
                 //add listener to report buttons
         report1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -232,7 +230,7 @@ public class ReportCoronaActivity extends AppCompatActivity {
 
         //check if all data are entered
         if (TextUtils.isEmpty(date2)|| gender1.getSelectedItem()=="Select the Gender"||age1.getSelectedItem()=="Select the age range"||tofcontent.getSelectedItem()=="Select the type of contact") {
-            Toast.makeText(getApplicationContext(), "Make sure you entered all the data", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Make sure you entered all the required data", Toast.LENGTH_SHORT).show();
             return;
 
         }
@@ -257,14 +255,9 @@ public class ReportCoronaActivity extends AppCompatActivity {
                 }
 
             });
-
-
         }
 
     }
-
-
-
 
     //back to report interface method
     @Override
