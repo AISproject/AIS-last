@@ -15,22 +15,24 @@
     <string name="Sing_upD">Doctor</string>
     <string name="Sing_upP">Patient</string>
     <string name="star">*</string>
-    <string name="signup"> Sign up</string>
+    <string name="signupPa"> Sign up patient</string>
+    <string name="signupDo"> Sign up Doctor</string>
+    <string name="signupBut"> Sign up </string>
     <string name="FNAME">First Name</string>
     <string name="lNAME">Last Name</string>
     <string name="email">Email</string>
     <string name="Gender">Gender: </string>
     <string name="hospital">Hospital: </string>
     <string name="medical_id"> Medical ID </string>
-    <string name="bdate"> Birthdate</string>
+    <string name="bdate"> BirthDate</string>
     <string name="phone"> Mobile number </string>
-    <string name="Major"> Major </string>
+    <string name="Major"> Major: </string>
     <string name="aboutme"> About me </string>
     <string name="ExistD"> Exist Diseases: </string>
     <string name="diabetes">Diabetes</string>
     <string name="Asthma">Asthma</string>
-    <string name="bPressure">Blood pressure</string>
-    <string name="vivoSmart">Do you have Garmin Vivo Smart HD watch?</string>
+    <string name="bPressure">Hypertension</string>
+    <string name="vivoSmart">Do you have Garmin Vivo Smart HR watch?</string>
     <string name="yes">Yes</string>
     <string name="No">No</string>
     <string name="none">None</string>
@@ -42,6 +44,7 @@
     <string name="MyPatient">My Patients</string>
 
     <string name="title_activity_fragment_report_flu">FragmentReportFlu</string>
+    <string name="error_user_exists">Email already exist</string>
 
 
     <string-array name="gender">
@@ -49,17 +52,13 @@
         <item>Female</item>
     </string-array>
 
-    <string-array name="hospital">
-        <item>Al Mana General Hospital- Dammam</item>
-        <item>Al Mana General Hospital- Khoubar</item>
-        <item>Mouwasat Hospital- Dammam</item>
-        <item>Mouwasat Hospital- Riyadh</item>
-        <item>Al Hammadi Hospital- Riyadh</item>
-        <item>Dallah Hospital- Riyadh</item>
-        <item>King Faisal Hospital- Makkah</item>
-        <item>Heraa General Hospital- Makkah</item>
-    </string-array>
+    <string-array name="major">
+        <item>ER</item>
+        <item>Family medicine</item>
+        <item>General</item>
+        <item>Infection disease</item>
 
+    </string-array>
     <string-array name="year">
         <item>1960</item>
         <item>1961</item>

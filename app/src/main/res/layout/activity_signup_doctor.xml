@@ -5,22 +5,25 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fillViewport="true">
+
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" android:background="#fff">
+        android:layout_height="wrap_content"
+        android:background="#fff">
 
 
         <TextView
             android:id="@+id/signupDoctor"
-            android:layout_width="match_parent"
+            android:layout_width="290dp"
             android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:background="@color/colorPrimary"
-            android:drawableLeft="@drawable/ic_action_back"
-            android:drawableStart="@drawable/ic_action_back"
-            android:text="@string/signup"
+
+            android:text="@string/signupDo"
             android:textAlignment="center"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
@@ -32,7 +35,7 @@
             android:layout_height="35dp"
             android:layout_below="@+id/signupDoctor"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="126dp"
             android:ems="10"
             android:hint="@string/FNAME"
             android:inputType="textPersonName"
@@ -57,11 +60,11 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:layout_alignEnd="@+id/LastName"
             android:layout_alignLeft="@+id/LastName"
-            android:layout_alignRight="@+id/LastName"
             android:layout_alignStart="@+id/LastName"
             android:layout_below="@+id/LastName"
+            android:layout_toLeftOf="@+id/star4"
+            android:layout_toStartOf="@+id/star4"
             android:ems="10"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
@@ -97,84 +100,60 @@
 
         <Spinner
             android:id="@+id/sgender"
-            android:layout_width="230dp"
+            android:layout_width="290dp"
             android:layout_height="35dp"
-            android:layout_alignEnd="@+id/medicalid"
-            android:layout_alignLeft="@+id/medicalid"
-            android:layout_alignRight="@+id/medicalid"
-            android:layout_alignStart="@+id/medicalid"
-            android:layout_below="@+id/medicalid"
-            android:entries="@array/gender"
-            android:spinnerMode="dropdown" />
+            android:layout_alignLeft="@+id/cpassword"
+            android:layout_alignStart="@+id/cpassword"
+            android:layout_alignTop="@+id/star7"
+            android:spinnerMode="dropdown"
+            android:focusableInTouchMode="true"
+            android:focusable="true"/>
 
-        <Spinner
-            android:id="@+id/shospital"
-            android:layout_width="230dp"
+
+        <EditText
+            android:id="@+id/medicalid"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignLeft="@+id/bdate"
+
+            android:layout_alignStart="@+id/bdate"
+            android:layout_below="@id/bdate"
+            android:layout_toLeftOf="@+id/star10"
+            android:layout_toStartOf="@+id/star10"
+            android:ems="10"
+            android:hint="@string/medical_id"
+            android:inputType="number"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/bdate"
+            android:layout_width="100dp"
             android:layout_height="35dp"
             android:layout_alignEnd="@+id/sgender"
             android:layout_alignLeft="@+id/sgender"
             android:layout_alignRight="@+id/sgender"
             android:layout_alignStart="@+id/sgender"
             android:layout_below="@+id/sgender"
-            android:entries="@array/hospital"
-            android:spinnerMode="dropdown" />
+            android:focusable="false"
+            android:hint="@string/bdate"
+            android:textSize="13sp" />
 
-        <EditText
-            android:id="@+id/medicalid"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_alignEnd="@+id/cpassword"
-            android:layout_alignLeft="@+id/cpassword"
-            android:layout_alignRight="@+id/cpassword"
-            android:layout_alignStart="@+id/cpassword"
-            android:layout_alignTop="@+id/star7"
-            android:ems="10"
-            android:hint="@string/medical_id"
-            android:inputType="number"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/bdate"
-            android:layout_width="100dp"
-            android:layout_height="35dp"
-            android:layout_alignLeft="@+id/shospital"
-            android:layout_alignStart="@+id/shospital"
-            android:layout_below="@+id/shospital"
-            android:layout_toLeftOf="@+id/star3"
-            android:layout_toStartOf="@+id/star3"
-            android:hint="@string/bdate" />
-
-        <EditText
-            android:id="@+id/phone"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_alignEnd="@+id/bdate"
-            android:layout_alignLeft="@+id/bdate"
-            android:layout_alignRight="@+id/bdate"
-            android:layout_alignStart="@+id/bdate"
-            android:layout_below="@+id/bdate"
-            android:ems="10"
-            android:hint="@string/phone"
-            android:inputType="phone"
-            android:textSize="12sp" />
-
-        <EditText
+        <Spinner
             android:id="@+id/Major"
-            android:layout_width="match_parent"
+            android:layout_width="290dp"
             android:layout_height="35dp"
-            android:layout_alignEnd="@+id/phone"
-            android:layout_alignLeft="@+id/phone"
-            android:layout_alignRight="@+id/phone"
-            android:layout_alignStart="@+id/phone"
-            android:layout_below="@+id/phone"
+            android:layout_below="@+id/medicalid"
+            android:layout_centerHorizontal="true"
             android:ems="10"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:hint="@string/Major"
             android:inputType="textPersonName"
             android:textSize="12sp" />
 
         <EditText
             android:id="@+id/aboutMe"
-            android:layout_width="match_parent"
+            android:layout_width="290dp"
             android:layout_height="100dp"
             android:layout_alignEnd="@+id/Major"
             android:layout_alignLeft="@+id/Major"
@@ -195,7 +174,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="140dp"
             android:background="@color/colorPrimary"
-            android:text="@string/signup" />
+            android:text="@string/signupBut" />
 
         <TextView
             android:id="@+id/star1"
@@ -205,7 +184,7 @@
             android:layout_toEndOf="@+id/FirstName"
             android:layout_toRightOf="@+id/FirstName"
             android:text="@string/star"
-            android:textColor="@color/colorRed"/>
+            android:textColor="@color/colorRed" />
 
         <TextView
             android:id="@+id/star2"
@@ -215,17 +194,8 @@
             android:layout_toEndOf="@+id/LastName"
             android:layout_toRightOf="@+id/LastName"
             android:text="@string/star"
-            android:textColor="@color/colorRed"/>
-
-        <TextView
-            android:id="@+id/star3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/bdate"
-            android:layout_toEndOf="@+id/shospital"
-            android:layout_toRightOf="@+id/shospital"
-            android:text="@string/star"
             android:textColor="@color/colorRed" />
+
 
         <TextView
             android:id="@+id/star4"
@@ -235,7 +205,7 @@
             android:layout_toEndOf="@+id/LastName"
             android:layout_toRightOf="@+id/LastName"
             android:text="@string/star"
-            android:textColor="@color/colorRed"/>
+            android:textColor="@color/colorRed" />
 
         <TextView
             android:id="@+id/star5"
@@ -245,7 +215,7 @@
             android:layout_toEndOf="@+id/password"
             android:layout_toRightOf="@+id/password"
             android:text="@string/star"
-            android:textColor="@color/colorRed"/>
+            android:textColor="@color/colorRed" />
 
         <TextView
             android:id="@+id/star6"
@@ -255,7 +225,7 @@
             android:layout_toEndOf="@+id/cpassword"
             android:layout_toRightOf="@+id/cpassword"
             android:text="@string/star"
-            android:textColor="@color/colorRed"/>
+            android:textColor="@color/colorRed" />
 
         <TextView
             android:id="@+id/star7"
@@ -265,7 +235,7 @@
             android:layout_toEndOf="@+id/medicalid"
             android:layout_toRightOf="@+id/medicalid"
             android:text="@string/star"
-            android:textColor="@color/colorRed"/>
+            android:textColor="@color/colorRed" />
 
         <TextView
             android:id="@+id/star8"
@@ -275,7 +245,7 @@
             android:layout_toEndOf="@+id/medicalid"
             android:layout_toRightOf="@+id/medicalid"
             android:text="@string/star"
-            android:textColor="@color/colorRed"/>
+            android:textColor="@color/colorRed" />
 
         <TextView
             android:id="@+id/star9"

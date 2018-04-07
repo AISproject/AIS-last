@@ -5,9 +5,11 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fillViewport="true">
+
     <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" android:background="#fff">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff">
 
 
         <TextView
@@ -16,15 +18,13 @@
             android:layout_height="35dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:drawableStart="@drawable/ic_action_back"
-            android:drawableLeft="@drawable/ic_action_back"
-            android:text="@string/signup"
+            android:background="@color/colorPrimary"
 
+            android:text="@string/signupPa"
             android:textAlignment="center"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:background="@color/colorPrimary" />
+            android:textStyle="bold" />
 
 
         <EditText
@@ -33,7 +33,7 @@
             android:layout_height="35dp"
             android:layout_below="@+id/signupPatient"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="155dp"
             android:ems="10"
             android:hint="@string/FNAME"
             android:inputType="textPersonName"
@@ -96,52 +96,40 @@
             android:inputType="textPassword"
             android:textSize="12sp" />
 
-        <EditText
-            android:id="@+id/phone"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_alignLeft="@+id/cpassword"
-            android:layout_alignStart="@+id/cpassword"
-            android:layout_alignTop="@+id/star7"
-            android:layout_toLeftOf="@+id/star7"
-            android:layout_toStartOf="@+id/star7"
-            android:ems="10"
-            android:hint="@string/phone"
-            android:inputType="phone"
-            android:textSize="12sp" />
 
         <Spinner
             android:id="@+id/sgender"
-            android:layout_width="230dp"
+            android:layout_width="290dp"
             android:layout_height="35dp"
-            android:layout_alignLeft="@+id/phone"
-            android:layout_alignStart="@+id/phone"
-            android:layout_alignTop="@+id/star8"
-            android:layout_toLeftOf="@+id/star8"
-            android:layout_toStartOf="@+id/star8"
-            android:entries="@array/gender"
-            android:spinnerMode="dropdown" />
+            android:layout_alignLeft="@+id/bdate"
+            android:layout_alignStart="@+id/bdate"
+            android:layout_below="@+id/bdate"
+            android:spinnerMode="dropdown"
+            android:focusableInTouchMode="true"
+            android:focusable="true"/>
 
 
-        <TextView
+        <EditText
             android:id="@+id/bdate"
-            android:layout_width="230dp"
+            android:layout_width="290dp"
             android:layout_height="35dp"
-            android:layout_alignEnd="@+id/sgender"
-            android:layout_alignLeft="@+id/sgender"
-            android:layout_alignRight="@+id/sgender"
-            android:layout_alignStart="@+id/sgender"
-            android:layout_below="@+id/sgender"
-            android:hint="@string/bdate" />
+            android:layout_alignLeft="@+id/cpassword"
+            android:layout_alignStart="@+id/cpassword"
+            android:layout_below="@+id/cpassword"
+            android:focusable="true"
+            android:hint="@string/bdate"
+            android:textSize="12sp"
+            android:focusableInTouchMode="true"
+           />
 
         <TextView
             android:id="@+id/ExisteD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/diabetes"
-            android:layout_alignStart="@+id/diabetes"
-            android:layout_below="@+id/bdate"
-            android:layout_marginTop="16dp"
+            android:layout_alignLeft="@+id/sgender"
+            android:layout_alignStart="@+id/sgender"
+            android:layout_below="@+id/sgender"
+            android:layout_marginTop="15dp"
             android:text="@string/ExistD"
             android:textColor="@color/colorblack"
             android:textSize="14sp" />
@@ -150,9 +138,11 @@
             android:id="@+id/diabetes"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_alignLeft="@+id/bdate"
-            android:layout_alignStart="@+id/bdate"
+            android:layout_alignEnd="@+id/ExisteD"
+            android:layout_alignRight="@+id/ExisteD"
             android:layout_below="@+id/ExisteD"
+            android:layout_marginTop="17dp"
+            android:onClick="SelectItem"
             android:text="@string/diabetes"
             android:textColor="@color/colorgray"
             android:textSize="12sp" />
@@ -161,72 +151,59 @@
             android:id="@+id/Asthma"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_alignLeft="@+id/bdate"
-            android:layout_alignStart="@+id/bdate"
+            android:layout_alignLeft="@+id/diabetes"
+            android:layout_alignStart="@+id/diabetes"
             android:layout_below="@+id/diabetes"
+            android:onClick="SelectItem"
             android:text="@string/Asthma"
             android:textColor="@color/colorgray"
             android:textSize="12sp" />
+
         <CheckBox
             android:id="@+id/b_pressure"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_alignLeft="@+id/bdate"
-            android:layout_alignStart="@+id/bdate"
+            android:layout_alignLeft="@+id/None"
+            android:layout_alignStart="@+id/None"
             android:layout_below="@+id/Asthma"
+            android:onClick="SelectItem"
             android:text="@string/bPressure"
             android:textColor="@color/colorgray"
             android:textSize="12sp" />
 
         <CheckBox
-        android:id="@+id/None"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_alignLeft="@+id/bdate"
-        android:layout_alignStart="@+id/bdate"
-        android:layout_below="@+id/b_pressure"
-        android:text="@string/none"
-        android:textColor="@color/colorgray"
-        android:textSize="12sp" />
+            android:id="@+id/None"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@+id/Asthma"
+            android:layout_alignStart="@+id/Asthma"
+            android:layout_below="@+id/b_pressure"
+            android:onClick="SelectItem"
+            android:text="@string/none"
+            android:textColor="@color/colorgray"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/vivoSmart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/None"
-            android:layout_alignStart="@+id/None"
+            android:layout_alignLeft="@+id/ExisteD"
+            android:layout_alignStart="@+id/ExisteD"
             android:layout_below="@+id/None"
+            android:layout_marginTop="21dp"
             android:text="@string/vivoSmart"
             android:textColor="@color/colorblack"
             android:textSize="14sp" />
-
-        <RadioButton
-            android:id="@+id/yes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/vivoSmart"
-            android:layout_alignStart="@+id/vivoSmart"
-            android:layout_below="@+id/vivoSmart"
-            android:text="@string/yes" />
-
-        <RadioButton
-            android:id="@+id/No"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/SignupBtn"
-            android:layout_toEndOf="@+id/diabetes"
-            android:layout_toRightOf="@+id/diabetes"
-            android:text="@string/No" />
 
         <Button
             android:id="@+id/SignupBtn"
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:layout_below="@+id/yes"
+            android:layout_below="@+id/QuestionGarmin"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="28dp"
             android:background="@color/colorPrimary"
-            android:text="@string/signup" />
+            android:text="@string/signupBut" />
 
         <TextView
             android:id="@+id/star1"
@@ -236,7 +213,7 @@
             android:layout_toEndOf="@+id/FirstName"
             android:layout_toRightOf="@+id/FirstName"
             android:text="@string/star"
-            android:textColor="@color/colorRed"/>
+            android:textColor="@color/colorRed" />
 
         <TextView
             android:id="@+id/star2"
@@ -246,7 +223,7 @@
             android:layout_toEndOf="@+id/FirstName"
             android:layout_toRightOf="@+id/FirstName"
             android:text="@string/star"
-            android:textColor="@color/colorRed"/>
+            android:textColor="@color/colorRed" />
 
         <TextView
             android:id="@+id/star3"
@@ -256,8 +233,7 @@
             android:layout_toEndOf="@+id/LastName"
             android:layout_toRightOf="@+id/LastName"
             android:text="@string/star"
-            android:textColor="@color/colorRed"/>
-
+            android:textColor="@color/colorRed" />
 
 
         <TextView
@@ -268,7 +244,7 @@
             android:layout_toEndOf="@+id/email"
             android:layout_toRightOf="@+id/email"
             android:text="@string/star"
-            android:textColor="@color/colorRed"/>
+            android:textColor="@color/colorRed" />
 
         <TextView
             android:id="@+id/star6"
@@ -278,25 +254,16 @@
             android:layout_toEndOf="@+id/cpassword"
             android:layout_toRightOf="@+id/cpassword"
             android:text="@string/star"
-            android:textColor="@color/colorRed"/>
+            android:textColor="@color/colorRed" />
 
-        <TextView
-            android:id="@+id/star7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cpassword"
-            android:layout_toEndOf="@+id/cpassword"
-            android:layout_toRightOf="@+id/cpassword"
-            android:text="@string/star"
-            android:textColor="@color/colorRed"/>
 
         <TextView
             android:id="@+id/star8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/phone"
-            android:layout_toEndOf="@+id/phone"
-            android:layout_toRightOf="@+id/phone"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/bdate"
+            android:layout_toRightOf="@+id/bdate"
             android:text="@string/star"
             android:textColor="@color/colorRed" />
 
@@ -304,12 +271,54 @@
             android:id="@+id/star9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/bdate"
-            android:layout_alignBottom="@+id/bdate"
-            android:layout_toEndOf="@+id/sgender"
-            android:layout_toRightOf="@+id/sgender"
+            android:layout_below="@+id/cpassword"
+            android:layout_toEndOf="@+id/cpassword"
+            android:layout_toRightOf="@+id/cpassword"
             android:text="@string/star"
             android:textColor="@color/colorRed" />
+
+        <TextView
+            android:id="@+id/star7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/vivoSmart"
+            android:layout_alignBottom="@+id/vivoSmart"
+            android:layout_toEndOf="@+id/sgender"
+            android:layout_toRightOf="@+id/sgender"
+            android:textColor="@color/colorRed" />
+
+        <RadioGroup
+            android:id="@+id/QuestionGarmin"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/vivoSmart"
+            android:layout_alignStart="@+id/vivoSmart"
+            android:layout_below="@+id/vivoSmart"
+            android:layout_marginTop="24dp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="10dp">
+
+
+
+            <RadioButton
+                android:id="@+id/yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vivoSmart"
+                android:layout_toLeftOf="@+id/vivoSmart"
+                android:layout_toStartOf="@+id/vivoSmart"
+                android:layout_weight="1"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/No" />
+        </RadioGroup>
 
 
     </RelativeLayout>

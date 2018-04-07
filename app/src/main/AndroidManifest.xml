@@ -12,14 +12,15 @@
         <activity android:name=".MainActivity">
 
         </activity>
-        <activity android:name=".SignupDoctor"><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+        <activity android:name=".SignupDoctor">  </activity>
         <activity android:name=".signUpPatient">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter></activity>
+
+
         <activity android:name=".MainActivityPatient" />
         <activity android:name=".MainDoctorActivity" />
         <activity android:name=".ForgetpassworedActivity" />
