@@ -66,8 +66,8 @@
         android:layout_marginTop="42dp"
         android:text="@string/date" />
 
-    <TextView
-        android:id="@+id/locationTextCorona"
+    <Button
+        android:id="@+id/locationTextflu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/gender"
@@ -92,10 +92,10 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/star18"
-        android:layout_alignLeft="@+id/locationTextCorona"
+        android:layout_alignLeft="@+id/locationTextflu"
         android:layout_alignRight="@+id/star18"
-        android:layout_alignStart="@+id/locationTextCorona"
-        android:layout_below="@+id/locationTextCorona"
+        android:layout_alignStart="@+id/locationTextflu"
+        android:layout_below="@+id/locationTextflu"
         android:layout_marginTop="232dp"
         android:background="@android:color/holo_red_light"
         android:text="@string/report" />
@@ -193,9 +193,9 @@
         android:id="@+id/question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/locationTextCorona"
-        android:layout_alignStart="@+id/locationTextCorona"
-        android:layout_below="@+id/locationTextCorona"
+        android:layout_alignLeft="@+id/locationTextflu"
+        android:layout_alignStart="@+id/locationTextflu"
+        android:layout_below="@+id/locationTextflu"
         android:layout_marginTop="39dp"
         android:text="@string/que"
      />
