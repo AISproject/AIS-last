@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AIS-lastll.iml" filepath="$PROJECT_DIR$/AIS-lastll.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AIS-last-rr.iml" filepath="$PROJECT_DIR$/AIS-last-rr.iml" />
+      <module fileurl="file://C:\Users\reem\AndroidStudioProjects\AIS-last-rr\AIS-lastll.iml" filepath="C:\Users\reem\AndroidStudioProjects\AIS-last-rr\AIS-lastll.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\reem\AndroidStudioProjects\AIS-last-rr\app\app.iml" filepath="C:\Users\reem\AndroidStudioProjects\AIS-last-rr\app\app.iml" />
     </modules>
   </component>
 </project>
