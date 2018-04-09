@@ -1,6 +1,7 @@
 package com.example.maryamabdulrhman.ais;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.database.DataSetObserver;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -46,6 +47,7 @@ public class ReportCoronaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_corona);
+
 
         //create date picker data and view in textfield by calling the id
         DisplayDate = (EditText) findViewById(R.id.date);
@@ -96,7 +98,8 @@ public class ReportCoronaActivity extends AppCompatActivity {
         age1 = (Spinner) findViewById(R.id.ageRange);
         tofcontent=(Spinner) findViewById(R.id.type);
         report1 = (Button) findViewById(R.id.reportCoronabu);
-        clear=(Button) findViewById((R.id.cancelBut));//
+        clear=(Button) findViewById((R.id.cancelBut));
+        //
 
         //set hint text on gender spinner
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item){
@@ -199,7 +202,8 @@ public class ReportCoronaActivity extends AppCompatActivity {
         report1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                StoreReport();//
+                StoreReport();
+               //
 
             }
 
@@ -243,11 +247,14 @@ public class ReportCoronaActivity extends AppCompatActivity {
             h.put("Age", age2);
             h.put("Gender", gender2);
             h.put("Type Of Contact",type);
+            database1.updateChildren(h);
             database1.setValue(h).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(ReportCoronaActivity.this, "successfully added", Toast.LENGTH_LONG).show();
+                        Intent intent=new Intent(ReportCoronaActivity.this,MapsActivity.class);
+                        startActivity(intent);
                     } else {
                         Toast.makeText(ReportCoronaActivity.this, "Error", Toast.LENGTH_LONG).show();
                     }

@@ -61,16 +61,6 @@
         android:layout_marginTop="42dp"
         android:text="@string/date1" />
 
-    <Button
-        android:id="@+id/locationTextCorona"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/type"
-        android:layout_alignStart="@+id/type"
-        android:layout_below="@+id/type"
-        android:layout_marginTop="22dp"
-        android:text="@string/location" />
-
     <TextView
         android:id="@+id/ageText"
         android:layout_width="wrap_content"
@@ -84,14 +74,14 @@
     <Button
         android:id="@+id/reportCoronabu"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/locationTextCorona"
-        android:layout_alignStart="@+id/locationTextCorona"
-        android:layout_below="@+id/locationTextCorona"
-        android:layout_marginTop="54dp"
-        android:layout_toLeftOf="@+id/star14"
-        android:layout_toStartOf="@+id/star14"
+        android:layout_alignEnd="@+id/type"
+        android:layout_alignLeft="@+id/type"
+        android:layout_alignRight="@+id/type"
+        android:layout_alignStart="@+id/type"
+        android:layout_below="@+id/type"
+        android:layout_marginTop="30dp"
         android:background="@android:color/holo_red_light"
         android:text="@string/report" />
 
@@ -182,15 +172,6 @@
         android:text="@string/star"
         android:textColor="@color/colorRed" />
 
-    <TextView
-        android:id="@+id/star14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/locationTextCorona"
-        android:layout_alignBottom="@+id/locationTextCorona"
-        android:layout_alignEnd="@+id/star13"
-        android:layout_alignRight="@+id/star13"
-        android:text="@string/star"
-        android:textColor="@color/colorRed" />
+
 
 </RelativeLayout>

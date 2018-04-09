@@ -64,6 +64,8 @@
     <string name="type_of_contact">Type of contact:</string>
     <string name="get_place">get place</string>
     <string name="contacttype">Type of Contact:</string>
+    <string name="save">Save</string>
+
 
     <string-array name="gender">
         <item>Select the Gender</item>

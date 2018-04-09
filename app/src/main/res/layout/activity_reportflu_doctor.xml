@@ -93,8 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/star18"
             android:layout_alignRight="@+id/star18"
-            android:layout_below="@+id/location"
-            android:layout_marginTop="60dp"
+            android:layout_centerVertical="true"
             android:background="@android:color/holo_red_light"
             android:text="@string/report" />
 
