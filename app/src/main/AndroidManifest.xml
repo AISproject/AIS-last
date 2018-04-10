@@ -21,13 +21,13 @@
         <activity android:name=".SignupDoctor" />
         <activity android:name=".signUpPatient" />
         <activity android:name=".MainActivityPatient">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".MainDoctorActivity"> <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+        <activity android:name=".MainDoctorActivity"> </activity>
         <activity android:name=".ForgetpassworedActivity" />
         <activity android:name=".ReportCoronaActivity" />
         <activity android:name=".ReportfluPatientActivity" />

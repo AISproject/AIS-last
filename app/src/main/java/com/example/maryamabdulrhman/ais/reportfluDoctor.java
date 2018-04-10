@@ -37,11 +37,12 @@ public class reportfluDoctor extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener DateSetListener;
     private Spinner gender1,age1;
     private EditText date1;
-    private RadioGroup radioGroup;
-    private RadioButton mon,adv,non;
     private Button report1;
     private Button clear;
     private DatabaseReference database1;
+    private TextView loclat1;
+    private TextView loclong1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +99,20 @@ public class reportfluDoctor extends AppCompatActivity {
         age1 = (Spinner) findViewById(R.id.ageRange);
         report1 = (Button) findViewById(R.id.reportflubtn);
         clear=(Button) findViewById((R.id.cancelBut));
+        loclat1=(TextView) findViewById(R.id.lat1);
+        loclong1=(TextView) findViewById(R.id.long1);
+        Intent inte=getIntent();
+        Bundle b=inte.getExtras();
+        if(b!= null){
+
+            Double lat=(Double) b.get("Latitude");
+            String lat2=Double.toString(lat);
+            loclat1.setText(lat2);
+            Double longe=(Double) b.get("Longitude");
+            String long2=Double.toString(longe);
+            loclong1.setText(long2);
+
+        }
 
 //
 
@@ -177,16 +192,18 @@ public class reportfluDoctor extends AppCompatActivity {
 
         });
         //clear and reset the field to the original
-        clear.setOnClickListener(new View.OnClickListener() {
+       /* clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 date1.setText("");
                 gender1.setSelection(2);
                 age1.setSelection(4);
+                loclat1.setText("");
+                loclong1.setText("");
 
 
             }
-        });//
+        });//*/
 
 
     }
@@ -195,6 +212,8 @@ public class reportfluDoctor extends AppCompatActivity {
         final String date2 = date1.getText().toString();
         final String gender2 = gender1.getSelectedItem().toString();
         final String age2 = age1.getSelectedItem().toString();
+        final String loclt=loclat1.getText().toString();
+        final String loclg=loclong1.getText().toString();
 
 
 
@@ -202,6 +221,9 @@ public class reportfluDoctor extends AppCompatActivity {
         //check if all data are entered
         if (TextUtils.isEmpty(date2)|| gender1.getSelectedItem()=="Select the Gender"||age1.getSelectedItem()=="Select the age range") {
             Toast.makeText(getApplicationContext(), "Make sure you entered all the required data", Toast.LENGTH_SHORT).show();
+            if(TextUtils.isEmpty(loclt)||TextUtils.isEmpty(loclg)){
+            Intent int1= new Intent(reportfluDoctor.this,MapsActivity.class);
+            startActivity(int1);}
             return;
 
         }
@@ -213,12 +235,20 @@ public class reportfluDoctor extends AppCompatActivity {
             h.put("Date:", date2);
             h.put("Age", age2);
             h.put("Gender", gender2);
+            h.put("Location-lat",loclt);
+            h.put("Location-long",loclg);
             database1.setValue(h).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
 
                         Toast.makeText(reportfluDoctor.this, "successfully added", Toast.LENGTH_LONG).show();
+                        date1.setText("");
+                        gender1.setSelection(2);
+                        age1.setSelection(4);
+                        loclat1.setText("");
+                        loclong1.setText("");
+
                     } else {
                         Toast.makeText(reportfluDoctor.this, "Error", Toast.LENGTH_LONG).show();
                     }

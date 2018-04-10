@@ -30,6 +30,15 @@
             android:text="@string/Gender" />
 
 
+        <TextView
+            android:id="@+id/genderTextCorona2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/long1"
+            android:layout_alignLeft="@+id/lat1"
+            android:layout_alignStart="@+id/lat1"
+            android:text="@string/location" />
+
         <EditText
             android:id="@+id/date"
             android:layout_width="270dp"
@@ -66,16 +75,6 @@
             android:layout_marginTop="42dp"
             android:text="@string/date" />
 
-        <Button
-            android:id="@+id/location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/gender"
-            android:layout_alignStart="@+id/gender"
-            android:layout_below="@+id/gender"
-            android:layout_marginTop="24dp"
-            android:text="@string/location" />
-
         <TextView
             android:id="@+id/ageText"
             android:layout_width="wrap_content"
@@ -91,9 +90,10 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/star18"
-            android:layout_alignRight="@+id/star18"
-            android:layout_centerVertical="true"
+            android:layout_alignEnd="@+id/gender"
+            android:layout_alignRight="@+id/gender"
+            android:layout_below="@+id/gender"
+            android:layout_marginTop="105dp"
             android:background="@android:color/holo_red_light"
             android:text="@string/report" />
 
@@ -142,17 +142,19 @@
             android:text="@string/star"
             android:textColor="@color/colorRed" />
 
+
         <TextView
-            android:id="@+id/star18"
+            android:id="@+id/star20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/reportflubtn"
-            android:layout_toEndOf="@+id/gender"
-            android:layout_toRightOf="@+id/gender"
+            android:layout_alignBaseline="@+id/long1"
+            android:layout_alignBottom="@+id/long1"
+            android:layout_alignEnd="@+id/star17"
+            android:layout_alignRight="@+id/star17"
+            android:layout_toEndOf="@+id/long1"
+            android:layout_toRightOf="@+id/long1"
             android:text="@string/star"
             android:textColor="@color/colorRed" />
-
-
 
         <TextView
             android:id="@+id/star16"
@@ -177,6 +179,25 @@
             android:text="@string/star"
             android:textColor="@color/colorRed" />
 
+        <TextView
+            android:id="@+id/lat1"
+            android:layout_width="130dp"
+            android:layout_height="35dp"
+            android:layout_alignLeft="@+id/gender"
+            android:layout_alignStart="@+id/gender"
+            android:layout_below="@+id/gender"
+            android:layout_marginTop="40dp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/long1"
+            android:layout_width="130dp"
+            android:layout_height="35dp"
+            android:layout_alignBaseline="@+id/lat1"
+            android:layout_alignBottom="@+id/lat1"
+            android:layout_alignEnd="@+id/reportflubtn"
+            android:layout_alignRight="@+id/reportflubtn"
+            android:text="" />
 
 
     </RelativeLayout>

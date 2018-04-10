@@ -24,12 +24,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
 
@@ -39,9 +37,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     LocationRequest Lr;
     private SupportMapFragment mapFragment;
     private DatabaseReference mDatabase;
-
     private Button mSaveButton;
-
+    private String info;
 
 
     @Override
@@ -50,9 +47,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         mSaveButton = (Button) findViewById(R.id.save);
-        mDatabase =
-                FirebaseDatabase.getInstance().getReference().child("Corona");
-       mapFragment = (SupportMapFragment) getSupportFragmentManager()
+        mDatabase =FirebaseDatabase.getInstance().getReference().child("Corona");
+
+        mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
@@ -95,14 +92,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     @Override
-    public void onLocationChanged(Location location) {
+    public void onLocationChanged(final Location location) {
         mLasttLocation= location;
         final LatLng latlang= new LatLng(location.getLatitude(),location.getLongitude());
         mMap.addMarker(new MarkerOptions().position(latlang).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-        mSaveButton.setOnClickListener(new View.OnClickListener(){
+
+       mSaveButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                DatabaseReference newPost = mDatabase;
+                Intent in= new Intent(MapsActivity.this,ReportfluPatientActivity.class);
+                in.putExtra("Latitude",location.getLatitude());
+                in.putExtra("Longitude", location.getLongitude());
+                startActivity(in);
+                /*DatabaseReference newPost = mDatabase;
                 newPost.child("Location").push().setValue(latlang).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -116,7 +118,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                     }
 
-                });
+                });*/
 
 
             }

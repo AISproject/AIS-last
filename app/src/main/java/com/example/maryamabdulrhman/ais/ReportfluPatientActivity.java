@@ -41,12 +41,12 @@ public class ReportfluPatientActivity extends AppCompatActivity {
     private Spinner gender1,age1;
     private EditText date1;
     private RadioGroup radioGroup;
-    private RadioButton mon,adv,non;
+    private RadioButton adv,non;
     private Button report1;
     private Button clear;
     private DatabaseReference database1;
-    // Initializing a String Array
-
+    private TextView loclat;
+    private TextView loclong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,9 +105,22 @@ public class ReportfluPatientActivity extends AppCompatActivity {
         report1 = (Button) findViewById(R.id.reportflubtn);
         clear=(Button) findViewById((R.id.cancelBut));
         radioGroup=(RadioGroup) findViewById(R.id.rgroup);
-        mon=(RadioButton) findViewById(R.id.monitor);
         adv=(RadioButton) findViewById(R.id.advice);
         non=(RadioButton) findViewById(R.id.none);
+        loclat=(TextView) findViewById(R.id.lat3);
+        loclong=(TextView) findViewById(R.id.long3);
+        Intent inte=getIntent();
+        Bundle b=inte.getExtras();
+        if(b!= null){
+
+            Double lat=(Double) b.get("Latitude");
+            String lat2=Double.toString(lat);
+            loclat.setText(lat2);
+            Double longe=(Double) b.get("Longitude");
+            String long2=Double.toString(longe);
+            loclong.setText(long2);
+
+        }
 //
 
         //set hint text on gender spinner
@@ -186,7 +199,7 @@ public class ReportfluPatientActivity extends AppCompatActivity {
 
         });
         //clear and reset the field to the original
-        clear.setOnClickListener(new View.OnClickListener() {
+       /* clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 date1.setText("");
@@ -195,8 +208,7 @@ public class ReportfluPatientActivity extends AppCompatActivity {
 
 
             }
-        });//
-        mon.setChecked(false);
+        });//*/
         adv.setChecked(false);
         non.setChecked(true);
 
@@ -206,6 +218,8 @@ public class ReportfluPatientActivity extends AppCompatActivity {
         final String date2 = date1.getText().toString();
         final String gender2 = gender1.getSelectedItem().toString();
         final String age2 = age1.getSelectedItem().toString();
+        final String loclt=loclat.getText().toString();
+        final String loclg=loclong.getText().toString();
 
 
 
@@ -213,6 +227,9 @@ public class ReportfluPatientActivity extends AppCompatActivity {
         //check if all data are entered
         if (TextUtils.isEmpty(date2)|| gender1.getSelectedItem()=="Select the Gender"||age1.getSelectedItem()=="Select the age range") {
             Toast.makeText(getApplicationContext(), "Make sure you entered all the required data", Toast.LENGTH_SHORT).show();
+            if(TextUtils.isEmpty(loclt)||TextUtils.isEmpty(loclg)){
+                Intent int1= new Intent(ReportfluPatientActivity.this,MapsActivity.class);
+                startActivity(int1);}
             return;
 
         }
@@ -224,12 +241,17 @@ public class ReportfluPatientActivity extends AppCompatActivity {
             h.put("Date:", date2);
             h.put("Age", age2);
             h.put("Gender", gender2);
+            h.put("Location-lat",loclt);
+            h.put("Location-long",loclg);
             database1.setValue(h).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
 
                         Toast.makeText(ReportfluPatientActivity.this, "successfully added", Toast.LENGTH_LONG).show();
+
+
+
                     } else {
                         Toast.makeText(ReportfluPatientActivity.this, "Error", Toast.LENGTH_LONG).show();
                     }
@@ -237,7 +259,7 @@ public class ReportfluPatientActivity extends AppCompatActivity {
                 }
 
             });
-            if(mon.isChecked()||adv.isChecked()){
+            if(adv.isChecked()){
 
 
                 Intent intent=new Intent(ReportfluPatientActivity.this,ReportfluPatientActivity.class);

@@ -40,6 +40,10 @@ public class ReportCoronaActivity extends AppCompatActivity {
     private Button report1;
     private Button clear;
     private DatabaseReference database1;
+    private TextView loclat;
+    private TextView loclong;
+
+
     // Initializing a String Array
 
 
@@ -47,7 +51,6 @@ public class ReportCoronaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_corona);
-
 
         //create date picker data and view in textfield by calling the id
         DisplayDate = (EditText) findViewById(R.id.date);
@@ -99,6 +102,21 @@ public class ReportCoronaActivity extends AppCompatActivity {
         tofcontent=(Spinner) findViewById(R.id.type);
         report1 = (Button) findViewById(R.id.reportCoronabu);
         clear=(Button) findViewById((R.id.cancelBut));
+        loclat=(TextView) findViewById(R.id.lat);
+        loclong=(TextView) findViewById(R.id.long2);
+        Intent inte=getIntent();
+        Bundle b=inte.getExtras();
+        if(b!= null){
+
+            Double lat=(Double) b.get("Latitude");
+            String lat2=Double.toString(lat);
+            loclat.setText(lat2);
+            Double longe=(Double) b.get("Longitude");
+            String long2=Double.toString(longe);
+            loclong.setText(long2);
+
+        }
+
         //
 
         //set hint text on gender spinner
@@ -209,7 +227,7 @@ public class ReportCoronaActivity extends AppCompatActivity {
 
         });
         //clear and reset the field to the original
-        clear.setOnClickListener(new View.OnClickListener() {
+       /* clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 date1.setText("");
@@ -219,7 +237,7 @@ public class ReportCoronaActivity extends AppCompatActivity {
 
 
             }
-        });//
+        });//*/
 
     }
     //this method to get report data and push it to firebase
@@ -228,6 +246,9 @@ public class ReportCoronaActivity extends AppCompatActivity {
         final String gender2 = gender1.getSelectedItem().toString();
         final String age2 = age1.getSelectedItem().toString();
         final String type=tofcontent.getSelectedItem().toString();
+        final String loclt=loclat.getText().toString();
+        final String loclg=loclong.getText().toString();
+
 
 
 
@@ -235,6 +256,9 @@ public class ReportCoronaActivity extends AppCompatActivity {
         //check if all data are entered
         if (TextUtils.isEmpty(date2)|| gender1.getSelectedItem()=="Select the Gender"||age1.getSelectedItem()=="Select the age range"||tofcontent.getSelectedItem()=="Select the type of contact") {
             Toast.makeText(getApplicationContext(), "Make sure you entered all the required data", Toast.LENGTH_SHORT).show();
+            if(TextUtils.isEmpty(loclt)||TextUtils.isEmpty(loclg)){
+                Intent int1= new Intent(ReportCoronaActivity.this,MapsActivity.class);
+                startActivity(int1);}
             return;
 
         }
@@ -247,14 +271,23 @@ public class ReportCoronaActivity extends AppCompatActivity {
             h.put("Age", age2);
             h.put("Gender", gender2);
             h.put("Type Of Contact",type);
-            database1.updateChildren(h);
+            h.put("Location-lat",loclt);
+            h.put("Location-long",loclg);
+
+
             database1.setValue(h).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(ReportCoronaActivity.this, "successfully added", Toast.LENGTH_LONG).show();
-                        Intent intent=new Intent(ReportCoronaActivity.this,MapsActivity.class);
-                        startActivity(intent);
+                        date1.setText("");
+                        gender1.setSelection(2);
+                        age1.setSelection(4);
+                        tofcontent.setSelection(4);
+                        loclat.setText("");
+                        loclong.setText("");
+                        /*Intent intent=new Intent(ReportCoronaActivity.this,MapsActivity.class);
+                        startActivity(intent);*/
                     } else {
                         Toast.makeText(ReportCoronaActivity.this, "Error", Toast.LENGTH_LONG).show();
                     }
