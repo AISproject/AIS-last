@@ -28,7 +28,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
+public class MapsActivitypatient extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
 
     private GoogleMap mMap;
     GoogleApiClient mGoogleApiClient;
@@ -36,7 +36,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     LocationRequest Lr;
     private SupportMapFragment mapFragment;
     private Button mSaveButton;
-    private Boolean fluD,coronaD;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +44,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         mSaveButton = (Button) findViewById(R.id.save);
-        fluD=getIntent().getBooleanExtra("reportfluDoctor",false);
-        coronaD=getIntent().getBooleanExtra("reportcoronaDoctor",false);
+
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
                 android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(MapsActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_REQUEST_CODE);
+            ActivityCompat.requestPermissions(MapsActivitypatient.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_REQUEST_CODE);
 
         }
         else{
@@ -92,24 +91,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onLocationChanged(final Location location) {
         mLasttLocation= location;
         final LatLng latlang= new LatLng(location.getLatitude(),location.getLongitude());
-        mMap.addMarker(new MarkerOptions().position(latlang).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+        mMap.addMarker(new MarkerOptions().position(latlang).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
 
-       mSaveButton.setOnClickListener(new View.OnClickListener(){
+        mSaveButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                if(fluD){
-                    Intent in2= new Intent(MapsActivity.this,reportfluDoctor.class);
-                    in2.putExtra("Latitude",location.getLatitude());
-                    in2.putExtra("Longitude", location.getLongitude());
-                    startActivity(in2);
-
-                }
-                else {
-                    Intent in3= new Intent(MapsActivity.this,ReportCoronaActivity.class);
-                    in3.putExtra("Latitude",location.getLatitude());
-                    in3.putExtra("Longitude", location.getLongitude());
-                    startActivity(in3);}
-
+                Intent in= new Intent(MapsActivitypatient.this,ReportfluPatientActivity.class);
+                in.putExtra("Latitude",location.getLatitude());
+                in.putExtra("Longitude", location.getLongitude());
+                startActivity(in);
 
             }
         });
@@ -128,7 +118,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
                 android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(MapsActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_REQUEST_CODE);
+            ActivityCompat.requestPermissions(MapsActivitypatient.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_REQUEST_CODE);
 
         }
         LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,Lr,this);
@@ -153,18 +143,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode){
-        case LOCATION_REQUEST_CODE:{
-            if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
-                mapFragment.getMapAsync(this);
+            case LOCATION_REQUEST_CODE:{
+                if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                    mapFragment.getMapAsync(this);
+                }
+                else{
+
+                    Toast.makeText(getApplicationContext(),"please provide the permission",Toast.LENGTH_SHORT).show();
+                }
+                break;
+
+
             }
-            else{
-
-                Toast.makeText(getApplicationContext(),"please provide the permission",Toast.LENGTH_SHORT).show();
-            }
-            break;
-
-
-        }
         }
     }
 }

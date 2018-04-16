@@ -100,6 +100,7 @@
         <item>Heraa General Hospital- Makkah</item>
     </string-array>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps_activitypatient">Map</string>
 
 
 </resources>

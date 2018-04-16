@@ -98,7 +98,6 @@ public class reportfluDoctor extends AppCompatActivity {
         date1 = (EditText) findViewById(R.id.date);
         age1 = (Spinner) findViewById(R.id.ageRange);
         report1 = (Button) findViewById(R.id.reportflubtn);
-        clear=(Button) findViewById((R.id.cancelBut));
         loclat1=(TextView) findViewById(R.id.lat1);
         loclong1=(TextView) findViewById(R.id.long1);
         Intent inte=getIntent();

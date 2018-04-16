@@ -101,7 +101,6 @@ public class ReportCoronaActivity extends AppCompatActivity {
         age1 = (Spinner) findViewById(R.id.ageRange);
         tofcontent=(Spinner) findViewById(R.id.type);
         report1 = (Button) findViewById(R.id.reportCoronabu);
-        clear=(Button) findViewById((R.id.cancelBut));
         loclat=(TextView) findViewById(R.id.lat);
         loclong=(TextView) findViewById(R.id.long2);
         Intent inte=getIntent();

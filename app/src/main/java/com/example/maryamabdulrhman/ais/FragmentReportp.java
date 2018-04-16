@@ -26,7 +26,7 @@ public class FragmentReportp  extends Fragment {
   btn1.setOnClickListener(new View.OnClickListener() {
    @Override
    public void onClick(View view) {
-    Intent int1= new Intent(getActivity(),MapsActivity.class);
+    Intent int1= new Intent(getActivity(),MapsActivitypatient.class);
     startActivity(int1);
    }
   });

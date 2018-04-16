@@ -99,20 +99,6 @@
             android:background="@android:color/holo_red_light"
             android:text="@string/report" />
 
-        <Button
-            android:id="@+id/cancelBut"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/reportflubtn"
-            android:layout_alignLeft="@+id/reportflubtn"
-            android:layout_alignRight="@+id/reportflubtn"
-            android:layout_alignStart="@+id/reportflubtn"
-            android:layout_below="@+id/reportflubtn"
-            android:layout_marginTop="3dp"
-            android:background="@android:color/holo_red_light"
-            android:text="@string/reset" />
-
         <Spinner
             android:id="@+id/ageRange"
             android:layout_width="230dp"
@@ -234,8 +220,8 @@
             android:layout_height="35dp"
             android:layout_alignBaseline="@+id/lat3"
             android:layout_alignBottom="@+id/lat3"
-            android:layout_toLeftOf="@+id/star22"
-            android:layout_toStartOf="@+id/star22"
+            android:layout_alignEnd="@+id/star15"
+            android:layout_alignRight="@+id/star15"
             android:text="" />
 
         <TextView

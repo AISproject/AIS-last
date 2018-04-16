@@ -25,6 +25,7 @@ public class FragmentReportActivity extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent int1= new Intent(getActivity(),MapsActivity.class);
+                int1.putExtra("reportfluDoctor",true);
                 startActivity(int1);
             }
         });
@@ -32,6 +33,7 @@ public class FragmentReportActivity extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent int2= new Intent(getActivity(),MapsActivity.class);
+                int2.putExtra("reportcoronaDoctor",false);
                 startActivity(int2);
 
             }

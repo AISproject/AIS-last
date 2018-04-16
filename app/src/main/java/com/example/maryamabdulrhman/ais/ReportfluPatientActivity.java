@@ -103,7 +103,6 @@ public class ReportfluPatientActivity extends AppCompatActivity {
         date1 = (EditText) findViewById(R.id.date);
         age1 = (Spinner) findViewById(R.id.ageRange);
         report1 = (Button) findViewById(R.id.reportflubtn);
-        clear=(Button) findViewById((R.id.cancelBut));
         radioGroup=(RadioGroup) findViewById(R.id.rgroup);
         adv=(RadioButton) findViewById(R.id.advice);
         non=(RadioButton) findViewById(R.id.none);
