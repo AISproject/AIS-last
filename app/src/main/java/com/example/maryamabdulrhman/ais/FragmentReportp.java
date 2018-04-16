@@ -27,6 +27,7 @@ public class FragmentReportp  extends Fragment {
    @Override
    public void onClick(View view) {
     Intent int1= new Intent(getActivity(),MapsActivitypatient.class);
+    int1.putExtra("reportfluPatient",true);
     startActivity(int1);
    }
   });
